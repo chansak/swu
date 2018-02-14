@@ -97,6 +97,10 @@
     <Compile Include="StudentScoreService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Swu.Portal.Core\Swu.Portal.Core.csproj">
+      <Project>{792BEACE-FEB8-4532-B50D-B7AABEF14C41}</Project>
+      <Name>Swu.Portal.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Swu.Portal.Data\Swu.Portal.Data.csproj">
       <Project>{5267aa98-568d-40e5-abb5-eadff3fb8c72}</Project>
       <Name>Swu.Portal.Data</Name>

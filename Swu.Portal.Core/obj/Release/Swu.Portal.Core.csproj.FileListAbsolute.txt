@@ -1,4 +1,5 @@
 D:\Git\swu\Swu.Portal.Core\bin\Release\Swu.Portal.Core.dll
 D:\Git\swu\Swu.Portal.Core\bin\Release\Swu.Portal.Core.pdb
+D:\Git\swu\Swu.Portal.Core\obj\Release\Swu.Portal.Core.csprojResolveAssemblyReference.cache
 D:\Git\swu\Swu.Portal.Core\obj\Release\Swu.Portal.Core.dll
 D:\Git\swu\Swu.Portal.Core\obj\Release\Swu.Portal.Core.pdb

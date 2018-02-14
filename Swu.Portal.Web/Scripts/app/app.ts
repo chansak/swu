@@ -352,7 +352,7 @@ module Swu {
             return {
                 restrict: 'A',
                 require: '^autocomplete', // ^look for controller on parents element
-                link: function (scope:any, element:any, attrs:any, autoCtrl:any) {
+                link: function (scope: any, element: any, attrs: any, autoCtrl: any) {
                     element.bind('mouseenter', function () {
                         autoCtrl.preSelect(attrs.val);
                         autoCtrl.setIndex(attrs.index);
@@ -368,7 +368,10 @@ module Swu {
             $rootScope.$on('$stateChangeStart', function (evt, to, params) {
                 console.log('next state:' + to.name);
                 console.log(params);
-                if ($state.current.name == 'board' && to.name == 'app') {
+                if (
+                    ($state.current.name == 'board' && to.name == 'app') ||
+                    ($state.current.name == 'qualification' && to.name == 'app')
+                ) {
                     console.log('hit');
                     evt.preventDefault();
                     //$state.go(to.redirectTo, params)

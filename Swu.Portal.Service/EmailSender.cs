@@ -1,4 +1,5 @@
-﻿using Swu.Portal.Service.Model;
+﻿using Swu.Portal.Core.Dependencies;
+using Swu.Portal.Service.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,16 @@ namespace Swu.Portal.Service
     }
     public class EmailSender : IEmailSender
     {
+        private readonly IConfigurationRepository _configRepository;
+        public EmailSender(IConfigurationRepository configRepository)
+        {
+            this._configRepository = configRepository;
+        }
         public void Send(Email email)
         {
             var fromAddress = new MailAddress(email.SenderEmail, email.SenderName);
-            var toAddress = new MailAddress("chansakcsc@gmail.com", "website admin");
-            const string fromPassword = "P@ssw0rd2107";
+            var toAddress = new MailAddress(this._configRepository.AdminEmail, "website admin");
+            var fromPassword = this._configRepository.AdminPassword;
             string subject = "Message from contract us page";
             string body = email.Message;
 
