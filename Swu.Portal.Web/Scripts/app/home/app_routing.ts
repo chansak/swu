@@ -8,7 +8,7 @@
             private $urlRouterProvider: ng.ui.IUrlRouterProvider,
             private $locationProvider: ng.ILocationProvider,
             private $httpProvider: ng.IHttpProvider) {
-            $urlRouterProvider.otherwise("/app");
+            //$urlRouterProvider.otherwise("/app");
             $stateProvider
                 .state("app", {
                     url: "/app",

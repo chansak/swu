@@ -369,8 +369,8 @@ module Swu {
                 console.log('next state:' + to.name);
                 console.log(params);
                 if (
-                    ($state.current.name == 'board' && to.name == 'app') ||
-                    ($state.current.name == 'qualification' && to.name == 'app')
+                    ($state.current.name == 'board' && to.name == 'app')
+                    //||($state.current.name == 'qualification' && to.name == 'app')
                 ) {
                     console.log('hit');
                     evt.preventDefault();
