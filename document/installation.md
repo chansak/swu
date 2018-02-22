@@ -31,3 +31,6 @@ There are 5 projects inside:
  * Swu.Protal.Service : It's service layer
  * Swu.Protal.Web : Presentation layer
  * Swu.Protal.Web.Api : It's api service
+
+Select Swu.Protal.Web as the start up project then press F5 for start debugging mode. Then see the result 
+![Step 3:](https://github.com/chansak/swu/blob/master/document/3-%20web%20main%20page.png)
