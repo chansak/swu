@@ -5,7 +5,6 @@ First clone the source from github and initialize database.
 ```bash
 git clone https://github.com/chansak/swu.git
 ```
-## 
 
 ## Host on
  * Web application server : .Net Framework 4.0  and IIS 8
