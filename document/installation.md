@@ -1,13 +1,5 @@
 # Web application Installation
 
-First clone the source from github and initialize database.
-
-```bash
-git clone https://github.com/chansak/swu.git
-```
-You will see the screen short as bellow,
-![Step 1:](https://github.com/chansak/swu/blob/master/document/1-%20folder%20structure.png)
-
 ## Host on
  * Web application server : .Net Framework 4.0  and IIS 8
  * Database server : MS SQL Server 2008 S2
@@ -20,3 +12,15 @@ You will see the screen short as bellow,
     * NuGet Package Manager
     * SQL Server Data Tools
     * TypeScript   1.8.36.0
+
+
+First clone the source from github and initialize database.
+
+```bash
+git clone https://github.com/chansak/swu.git
+```
+You will see the screen short as bellow,
+![Step 1:](https://github.com/chansak/swu/blob/master/document/1-%20folder%20structure.png)
+
+Then open the Swu.Portal.Web.sln with Visual Studio 2015
+![Step 1:](https://github.com/chansak/swu/blob/master/document/2-%20first%20look%20in%20vs2015.png)
