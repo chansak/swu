@@ -23,6 +23,7 @@ git clone https://github.com/chansak/swu.git
 ![Step 1:](https://github.com/chansak/swu/blob/master/document/1-%20folder%20structure.png)
 
 Then open the Swu.Portal.Web.sln with Visual Studio 2015
+
 ![Step 2:](https://github.com/chansak/swu/blob/master/document/2-%20first%20look%20in%20vs2015.png)
 
 There are 5 projects inside:
@@ -43,4 +44,5 @@ update-database -verbose -force
 Wow !! The database has been created. We call SwuPortal
 
 Select Swu.Protal.Web as the start up project then press F5 for start debugging mode. Then see the result 
+
 ![Step 5:](https://github.com/chansak/swu/blob/master/document/3-%20web%20main%20page.png)
