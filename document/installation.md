@@ -27,4 +27,8 @@ Then open the Swu.Portal.Web.sln with Visual Studio 2015
 ![Step 1:](https://github.com/chansak/swu/blob/master/document/2-%20first%20look%20in%20vs2015.png)
 
 There are 5 projects inside:
- 1. Swu.Protal.Core
+ * Swu.Protal.Core : contain the main dependencies
+ * Swu.Protal.Data : It's data layer, entity model, entity context, repository, domain extension and migration mechanism
+ * Swu.Protal.Service : It's service layer
+ * Swu.Protal.Web : Presentation layer
+ * Swu.Protal.Web.Api : It's api service
