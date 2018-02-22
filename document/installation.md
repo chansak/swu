@@ -15,7 +15,7 @@
 
  
  ## Preparing machine before working
-First of all, clone the source code from github by the code
+First of all, clone the source code from github by the command bellow,
 
 ```bash
 git clone https://github.com/chansak/swu.git
