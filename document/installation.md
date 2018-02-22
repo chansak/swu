@@ -32,5 +32,11 @@ There are 5 projects inside:
  * Swu.Protal.Web : Presentation layer
  * Swu.Protal.Web.Api : It's api service
 
+Right now, you might want to see the web protal but before that you must create the database by run the command bellow in the Package Manager Console,
+```bash
+update-database -verbose -force
+```
+![Step 3:](https://github.com/chansak/swu/blob/master/document/4-%20database%20initialize.png)
+
 Select Swu.Protal.Web as the start up project then press F5 for start debugging mode. Then see the result 
-![Step 3:](https://github.com/chansak/swu/blob/master/document/3-%20web%20main%20page.png)
+![Step 4:](https://github.com/chansak/swu/blob/master/document/3-%20web%20main%20page.png)
