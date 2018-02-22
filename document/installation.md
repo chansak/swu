@@ -13,7 +13,8 @@
     * SQL Server Data Tools
     * TypeScript   1.8.36.0
 
-
+ 
+ ## Preparing machine before working
 First clone the source from github and initialize database.
 
 ```bash
