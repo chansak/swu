@@ -39,6 +39,7 @@ update-database -verbose -force
 ![Step 3:](https://github.com/chansak/swu/blob/master/document/4-%20database%20initialize.png)
 
 ![Step 4:](https://github.com/chansak/swu/blob/master/document/database.png)
+
 Wow !! The database has been created. We call SwuPortal
 
 Select Swu.Protal.Web as the start up project then press F5 for start debugging mode. Then see the result 
