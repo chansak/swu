@@ -25,3 +25,6 @@ You will see the screen short as bellow,
 
 Then open the Swu.Portal.Web.sln with Visual Studio 2015
 ![Step 1:](https://github.com/chansak/swu/blob/master/document/2-%20first%20look%20in%20vs2015.png)
+
+There are 5 projects inside:
+ 1. Swu.Protal.Core
