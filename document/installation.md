@@ -6,7 +6,8 @@ First clone the source from github and initialize database.
 git clone https://github.com/chansak/swu.git
 ```
 You will see the screen short as bellow,
-!(/document/1-%20folder%20structure.png)
+![Step 1:](/document/1-%20folder%20structure.png)
+Format: ![Alt Text](url)
 
 ## Host on
  * Web application server : .Net Framework 4.0  and IIS 8
