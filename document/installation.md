@@ -15,7 +15,7 @@
 
  
  ## Preparing machine before working
-First clone the source from github and initialize database.
+First of all, clone the source code from github by the code
 
 ```bash
 git clone https://github.com/chansak/swu.git
@@ -38,7 +38,7 @@ update-database -verbose -force
 ```
 ![Step 3:](https://github.com/chansak/swu/blob/master/document/4-%20database%20initialize.png)
 
-Wow !! The database has been created call SwuPortal
+Wow !! The database has been created. We call SwuPortal
 ![Step 4:](https://github.com/chansak/swu/blob/master/document/database.png)
 
 Select Swu.Protal.Web as the start up project then press F5 for start debugging mode. Then see the result 
