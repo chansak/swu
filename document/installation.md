@@ -4,7 +4,7 @@
  * Web application server : .Net Framework 4.0  and IIS 8
  * Database server : MS SQL Server 2008 S2
  
- ## Dev tool
+ ## Dev tools
   * Microsoft Visual Studio 2015 Version 14.0.25431.01 Update 3
     * ASP.NET and Web Tools 2015.1
     * ASP.NET Web Frameworks and Tools
@@ -13,6 +13,10 @@
     * SQL Server Data Tools
     * TypeScript   1.8.36.0
 
+ ## Other tools
+  *Node.js v8.9.3
+  *Git version 2.10.1.window.1
+  *SourceTree version 1.7.0.32509 (Optional)
  
  ## Preparing machine before working
 First of all, clone the source code from github by the command bellow,
