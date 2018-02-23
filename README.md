@@ -1,5 +1,5 @@
 # :sparkles: Joint Medical Programme :sparkles:
-##### SRINAKHARINWIROT UNIVERSITY AND UNIVERSITY OF NOTTINGHAM
+##### :school: SRINAKHARINWIROT UNIVERSITY AND UNIVERSITY OF NOTTINGHAM
 
 ## Getting Started
 
