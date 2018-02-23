@@ -14,7 +14,7 @@
     * TypeScript   1.8.36.0
 
  ## Other tools
-  *N ode.js v8.9.3
+  * Node.js v8.9.3
   * Git version 2.10.1.window.1
   * SourceTree version 1.7.0.32509 (Optional)
  
