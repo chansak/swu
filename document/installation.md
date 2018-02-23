@@ -14,9 +14,9 @@
     * TypeScript   1.8.36.0
 
  ## Other tools
-  *Node.js v8.9.3
-  *Git version 2.10.1.window.1
-  *SourceTree version 1.7.0.32509 (Optional)
+  *N ode.js v8.9.3
+  * Git version 2.10.1.window.1
+  * SourceTree version 1.7.0.32509 (Optional)
  
  ## Preparing machine before working
 First of all, clone the source code from github by the command bellow,
