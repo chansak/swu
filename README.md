@@ -1,4 +1,4 @@
-# Joint Medical Programme 
+# :sparkles: Joint Medical Programme :sparkles:
 ##### SRINAKHARINWIROT UNIVERSITY AND UNIVERSITY OF NOTTINGHAM
 
 ## Getting Started
