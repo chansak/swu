@@ -47,6 +47,6 @@ update-database -verbose -force
 
 Wow !! :stuck_out_tongue_winking_eye: The database has been created. We call SwuPortal
 
-Select Swu.Protal.Web as the start up project then press F5 for start debugging mode. Then see the result 
+It's ready for you to see the application. So, let's select Swu.Protal.Web as the start up project then press F5 for start debugging mode.
 
 ![Step 5:](https://github.com/chansak/swu/blob/master/document/3-%20web%20main%20page.png) :clap::clap::clap:
