@@ -18,6 +18,7 @@
         addNewForumCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode>;
         addNewResearchCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode>;
         addNewCourseCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode>;
+        getCategoryById(type: number, id: number): ng.IPromise<WebboardCategory>;
     }
     @Module("app")
     @Factory({ name: "webboardService" })
@@ -70,6 +71,23 @@
         }
         addNewCourseCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode> {
             return this.apiService.postData(category, "course/addNewCategory");
+        }
+        getCategoryById(type: number, id: number): ng.IPromise<WebboardCategory> {
+            switch (type) {
+                case 1:
+                    {
+                        return this.apiService.getData<WebboardCategory>("forum/getCategoryById?id=" + id);
+                    }
+                case 2:
+                    {
+                        return this.apiService.getData<WebboardCategory>("course/getCategoryById?id=" + id);
+                    }
+                case 3:
+                    {
+                        return this.apiService.getData<WebboardCategory>("research/getCategoryById?id=" + id);
+                    }
+                default: { break; }
+            }
         }
     }
 }

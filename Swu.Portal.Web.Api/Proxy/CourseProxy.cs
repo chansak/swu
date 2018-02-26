@@ -76,7 +76,7 @@ namespace Swu.Portal.Web.Api.Proxy
             FullDescription = c.FullDescription;
             BigImageUrl = c.BigImageUrl;
             CategoryId = c.CategoryId;
-            CategoryName = c.Category.Title;
+            CategoryName = c.Category.Title_TH;
         }
     }
 }

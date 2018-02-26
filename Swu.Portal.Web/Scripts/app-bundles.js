@@ -3788,28 +3788,31 @@ var Swu;
                 _this.$scope.showAddNewCategory = true;
             };
             this.$scope.save = function () {
-                if (_this.$scope.newCategoty != "") {
+                if (_this.$scope.newCategoty_th != "" && _this.$scope.newCategoty_en != "") {
                     switch (_this.$scope.type) {
                         case 1: {
-                            _this.webboardService.addNewForumCategory({ id: 0, title: _this.$scope.newCategoty }).then(function (response) {
+                            _this.webboardService.addNewForumCategory({ id: 0, title_th: _this.$scope.newCategoty_th, title_en: _this.$scope.newCategoty_en }).then(function (response) {
                                 _this.$scope.showAddNewCategory = false;
-                                _this.$scope.newCategoty = "";
+                                _this.$scope.newCategoty_th = "";
+                                _this.$scope.newCategoty_en = "";
                                 _this.$scope.search();
                             }, function (error) { });
                             break;
                         }
                         case 2: {
-                            _this.webboardService.addNewCourseCategory({ id: 0, title: _this.$scope.newCategoty }).then(function (response) {
+                            _this.webboardService.addNewCourseCategory({ id: 0, title_th: _this.$scope.newCategoty_th, title_en: _this.$scope.newCategoty_en }).then(function (response) {
                                 _this.$scope.showAddNewCategory = false;
-                                _this.$scope.newCategoty = "";
+                                _this.$scope.newCategoty_th = "";
+                                _this.$scope.newCategoty_en = "";
                                 _this.$scope.search();
                             }, function (error) { });
                             break;
                         }
                         case 3: {
-                            _this.webboardService.addNewResearchCategory({ id: 0, title: _this.$scope.newCategoty }).then(function (response) {
+                            _this.webboardService.addNewResearchCategory({ id: 0, title_th: _this.$scope.newCategoty_th, title_en: _this.$scope.newCategoty_en }).then(function (response) {
                                 _this.$scope.showAddNewCategory = false;
-                                _this.$scope.newCategoty = "";
+                                _this.$scope.newCategoty_th = "";
+                                _this.$scope.newCategoty_en = "";
                                 _this.$scope.search();
                             }, function (error) { });
                             break;
@@ -3819,23 +3822,43 @@ var Swu;
             };
             this.$scope.cancel = function () {
                 _this.$scope.showAddNewCategory = false;
-                _this.$scope.newCategoty = "";
+                _this.$scope.newCategoty_th = "";
+                _this.$scope.newCategoty_en = "";
                 _this.$scope.search();
             };
             this.$scope.search = function () {
-                var _first = 0;
+                var _first;
                 switch (_this.$scope.type) {
                     case 1: {
                         _this.$scope.categoryName = "Forums";
                         _this.webboardService.getForumsCategory().then(function (response) {
                             _this.$scope.categorys = response;
                             if (_this.$scope.categorys.length > 0) {
-                                _first = _.first($scope.categorys).id;
+                                _first = _.first($scope.categorys);
                             }
                             _.map(_this.$scope.categorys, function (c) {
-                                c.link = "board.forum({id:" + c.id + "})";
+                                switch ($rootScope.lang) {
+                                    case "en": {
+                                        c.link = "board.forum({id:" + c.id + "})";
+                                        break;
+                                    }
+                                    case "th": {
+                                        c.link = "board.forum({id:" + c.id + "})";
+                                        break;
+                                    }
+                                }
                             });
-                            $state.go('board.forum', { 'id': _first });
+                            $scope.swapLanguage($rootScope.lang);
+                            switch ($rootScope.lang) {
+                                case "en": {
+                                    $state.go('board.forum', { 'id': _first.id });
+                                    break;
+                                }
+                                case "th": {
+                                    $state.go('board.forum', { 'id': _first.id });
+                                    break;
+                                }
+                            }
                         }, function (error) { });
                         break;
                     }
@@ -3844,12 +3867,31 @@ var Swu;
                         _this.webboardService.getCourseCategory().then(function (response) {
                             _this.$scope.categorys = response;
                             if (_this.$scope.categorys.length > 0) {
-                                _first = _.first($scope.categorys).id;
+                                _first = _.first($scope.categorys);
                             }
                             _.map(_this.$scope.categorys, function (c) {
-                                c.link = "board.course({id:" + c.id + "})";
+                                switch ($rootScope.lang) {
+                                    case "en": {
+                                        c.link = "board.course({id:" + c.id + "})";
+                                        break;
+                                    }
+                                    case "th": {
+                                        c.link = "board.course({id:" + c.id + "})";
+                                        break;
+                                    }
+                                }
                             });
-                            $state.go('board.course', { 'id': _first });
+                            $scope.swapLanguage($rootScope.lang);
+                            switch ($rootScope.lang) {
+                                case "en": {
+                                    $state.go('board.course', { 'id': _first.id });
+                                    break;
+                                }
+                                case "th": {
+                                    $state.go('board.course', { 'id': _first.id });
+                                    break;
+                                }
+                            }
                         }, function (error) { });
                         break;
                     }
@@ -3858,17 +3900,59 @@ var Swu;
                         _this.webboardService.getResearchCategory().then(function (response) {
                             _this.$scope.categorys = response;
                             if (_this.$scope.categorys.length > 0) {
-                                _first = _.first($scope.categorys).id;
+                                _first = _.first($scope.categorys);
                             }
                             _.map(_this.$scope.categorys, function (c) {
-                                c.link = "board.research({id:" + c.id + "})";
+                                switch ($rootScope.lang) {
+                                    case "en": {
+                                        c.link = "board.research({id:" + c.id + "})";
+                                        break;
+                                    }
+                                    case "th": {
+                                        c.link = "board.research({id:" + c.id + "})";
+                                        break;
+                                    }
+                                }
                             });
-                            $state.go('board.research', { 'id': _first });
+                            $scope.swapLanguage($rootScope.lang);
+                            switch ($rootScope.lang) {
+                                case "en": {
+                                    $state.go('board.research', { 'id': _first.id });
+                                    break;
+                                }
+                                case "th": {
+                                    $state.go('board.research', { 'id': _first.id });
+                                    break;
+                                }
+                            }
                         }, function (error) { });
                         break;
                     }
                 }
             };
+            this.$scope.swapLanguage = function (lang) {
+                switch (lang) {
+                    case "en": {
+                        _.map($scope.categorys, function (s) {
+                            s.title = s.title_en;
+                        });
+                        $scope.subCategoryName = _.first($scope.categorys).title_en;
+                        break;
+                    }
+                    case "th": {
+                        _.map($scope.categorys, function (s) {
+                            s.title = s.title_th;
+                        });
+                        $scope.subCategoryName = _.first($scope.categorys).title_th;
+                        break;
+                    }
+                }
+            };
+            this.$rootScope.$watch("lang", function (newValue, oldValue) {
+                if ($scope.categorys.length > 0) {
+                    $scope.swapLanguage(newValue);
+                }
+            });
             this.init();
         }
         ;
@@ -4008,6 +4092,22 @@ var Swu;
                 }
                 return _canEdit;
             };
+            this.$rootScope.$watch("lang", function (newValue, oldValue) {
+                webboardService.getCategoryById(1, $scope.id).then(function (response) {
+                    $scope.category = response;
+                    console.log(response);
+                    switch (newValue) {
+                        case "en": {
+                            $scope.category.title = response.title_en;
+                            break;
+                        }
+                        case "th": {
+                            $scope.category.title = response.title_th;
+                            break;
+                        }
+                    }
+                }, function (error) { });
+            });
             this.init();
         }
         GeneralBoardController.prototype.init = function () {
@@ -4076,6 +4176,22 @@ var Swu;
                     _this.$scope.totalPageNumber = _this.$scope.getTotalPageNumber();
                 }, function (error) { });
             };
+            this.$rootScope.$watch("lang", function (newValue, oldValue) {
+                webboardService.getCategoryById(2, $scope.id).then(function (response) {
+                    $scope.category = response;
+                    console.log(response);
+                    switch (newValue) {
+                        case "en": {
+                            $scope.category.title = response.title_en;
+                            break;
+                        }
+                        case "th": {
+                            $scope.category.title = response.title_th;
+                            break;
+                        }
+                    }
+                }, function (error) { });
+            });
             this.init();
         }
         CourseBoardController.prototype.init = function () {
@@ -4206,6 +4322,22 @@ var Swu;
                 var fileName = path.split('\\').pop().split('/').pop();
                 return fileName;
             };
+            this.$rootScope.$watch("lang", function (newValue, oldValue) {
+                webboardService.getCategoryById(3, $scope.id).then(function (response) {
+                    $scope.category = response;
+                    console.log(response);
+                    switch (newValue) {
+                        case "en": {
+                            $scope.category.title = response.title_en;
+                            break;
+                        }
+                        case "th": {
+                            $scope.category.title = response.title_th;
+                            break;
+                        }
+                    }
+                }, function (error) { });
+            });
             this.init();
         }
         ResearchBoardController.prototype.init = function () {
@@ -4419,6 +4551,25 @@ var Swu;
         };
         webboardService.prototype.addNewCourseCategory = function (category) {
             return this.apiService.postData(category, "course/addNewCategory");
+        };
+        webboardService.prototype.getCategoryById = function (type, id) {
+            switch (type) {
+                case 1:
+                    {
+                        return this.apiService.getData("forum/getCategoryById?id=" + id);
+                    }
+                case 2:
+                    {
+                        return this.apiService.getData("course/getCategoryById?id=" + id);
+                    }
+                case 3:
+                    {
+                        return this.apiService.getData("research/getCategoryById?id=" + id);
+                    }
+                default: {
+                    break;
+                }
+            }
         };
         webboardService.$inject = ['apiService', 'AppConstant'];
         webboardService = __decorate([

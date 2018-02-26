@@ -504,7 +504,8 @@ namespace Swu.Portal.Web.Api
             {
                 this._courseCategoryRepository.Add(new CourseCategory
                 {
-                    Title = category.Title
+                    Title_TH = category.Title_TH,
+                    Title_EN = category.Title_EN
                 });
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
@@ -522,13 +523,15 @@ namespace Swu.Portal.Web.Api
                 {
                     this._courseCategoryRepository.Add(new CourseCategory
                     {
-                        Title = category.Title
+                        Title_TH = category.Title_TH,
+                        Title_EN = category.Title_EN
                     });
                 }
                 else
                 {
                     var c = this._courseCategoryRepository.FindById(category.Id);
-                    c.Title = category.Title;
+                    c.Title_TH = category.Title_TH;
+                    c.Title_EN = category.Title_EN;
                     this._courseCategoryRepository.Update(c);
                 }
                 return Request.CreateResponse(HttpStatusCode.OK);

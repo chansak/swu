@@ -1,6 +1,8 @@
 ﻿module Swu {
     export interface IResearchBoardScope extends IPagination {
         id: number;
+        category: WebboardCategory;
+
         items: Webboarditems[];
         displayItems: Webboarditems[];
         currentUser: IUserProfile;
@@ -127,6 +129,22 @@
                 var fileName = path.split('\\').pop().split('/').pop();
                 return fileName;
             };
+            this.$rootScope.$watch("lang", function (newValue: string, oldValue: string) {
+                webboardService.getCategoryById(3, $scope.id).then((response) => {
+                    $scope.category = response;
+                    console.log(response);
+                    switch (newValue) {
+                        case "en": {
+                            $scope.category.title = response.title_en;
+                            break;
+                        }
+                        case "th": {
+                            $scope.category.title = response.title_th;
+                            break;
+                        }
+                    }
+                }, (error) => { });
+            });
             this.init();
         }
         init(): void {

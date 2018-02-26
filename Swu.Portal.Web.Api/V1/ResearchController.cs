@@ -172,7 +172,8 @@ namespace Swu.Portal.Web.Api.V1
             {
                 this._researchCategoryRepository.Add(new ResearchCategory
                 {
-                    Title = category.Title
+                    Title_EN = category.Title_EN,
+                    Title_TH = category.Title_TH
                 });
                 return Request.CreateResponse(HttpStatusCode.OK);
             }
@@ -190,13 +191,15 @@ namespace Swu.Portal.Web.Api.V1
                 {
                     this._researchCategoryRepository.Add(new ResearchCategory
                     {
-                        Title = category.Title
+                        Title_TH = category.Title_TH,
+                        Title_EN = category.Title_EN
                     });
                 }
                 else
                 {
                     var c = this._researchCategoryRepository.FindById(category.Id);
-                    c.Title = category.Title;
+                    c.Title_TH = category.Title_TH;
+                    c.Title_EN = category.Title_EN;
                     this._researchCategoryRepository.Update(c);
                 }
                 return Request.CreateResponse(HttpStatusCode.OK);

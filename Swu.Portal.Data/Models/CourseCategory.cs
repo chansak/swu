@@ -13,7 +13,8 @@ namespace Swu.Portal.Data.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string Title { get; set; }
+        public string Title_TH { get; set; }
+        public string Title_EN { get; set; }
 
         public virtual ICollection<Course> Courses { get; set; }
     }

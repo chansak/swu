@@ -1,6 +1,7 @@
 ﻿module Swu {
-    export interface IGeneralBoardScope extends IPagination {
+    export interface IGeneralBoardScope extends IPagination, baseControllerScope {
         id: number;
+        category: WebboardCategory;
         items: Webboarditems[];
         displayItems: Webboarditems[];
         currentUser: IUserProfile;
@@ -119,6 +120,22 @@
                 }
                 return _canEdit;
             };
+            this.$rootScope.$watch("lang", function (newValue: string, oldValue: string) {
+                webboardService.getCategoryById(1, $scope.id).then((response) => {
+                    $scope.category = response;
+                    console.log(response);
+                    switch (newValue) {
+                        case "en": {
+                            $scope.category.title = response.title_en;
+                            break;
+                        }
+                        case "th": {
+                            $scope.category.title = response.title_th;
+                            break;
+                        }
+                    }
+                }, (error) => { });
+            });
             this.init();
         }
         init(): void {

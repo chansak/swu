@@ -12,8 +12,10 @@ namespace Swu.Portal.Web.Api.Proxy
     {
         [JsonProperty(PropertyName = "id")]
         public int Id { get; set; }
-        [JsonProperty(PropertyName = "title")]
-        public string Title { get; set; }
+        [JsonProperty(PropertyName = "title_th")]
+        public string Title_TH { get; set; }
+        [JsonProperty(PropertyName = "title_en")]
+        public string Title_EN { get; set; }
         public WebboardCategoryProxy()
         {
 
@@ -21,17 +23,20 @@ namespace Swu.Portal.Web.Api.Proxy
         public WebboardCategoryProxy(CourseCategory c)
         {
             this.Id = c.Id;
-            this.Title = c.Title;
+            this.Title_TH = c.Title_TH;
+            this.Title_EN = c.Title_EN;
         }
         public WebboardCategoryProxy(ForumCategory f)
         {
             this.Id = f.Id;
-            this.Title = f.Title;
+            this.Title_TH = f.Title_TH;
+            this.Title_EN = f.Title_EN;
         }
         public WebboardCategoryProxy(ResearchCategory r)
         {
             this.Id = r.Id;
-            this.Title = r.Title;
+            this.Title_TH = r.Title_TH;
+            this.Title_EN = r.Title_EN;
         }
     }
 }

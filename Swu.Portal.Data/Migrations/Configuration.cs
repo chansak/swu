@@ -124,27 +124,32 @@ namespace Swu.Portal.Data.Migrations
             #region Course Category
             var cat1 = new CourseCategory
             {
-                Title = "ชั้นปี 1",
+                Title_TH = "ชั้นปี 1",
+                Title_EN = "First-year",
                 ApplicationUser = defaultUser
             };
             var cat2 = new CourseCategory
             {
-                Title = "ชั้นปี 2",
+                Title_TH = "ชั้นปี 2",
+                Title_EN = "Second-year",
                 ApplicationUser = defaultUser
             };
             var cat3 = new CourseCategory
             {
-                Title = "ชั้นปี 3",
+                Title_TH = "ชั้นปี 3",
+                Title_EN = "Third-year",
                 ApplicationUser = defaultUser
             };
             var cat4 = new CourseCategory
             {
-                Title = "ชั้นปี 4",
+                Title_TH = "ชั้นปี 4",
+                Title_EN = "Fourth-year",
                 ApplicationUser = defaultUser
             };
             var cat5 = new CourseCategory
             {
-                Title = "ชั้นปี 5",
+                Title_TH = "ชั้นปี 5",
+                Title_EN = "Fifth-year",
                 ApplicationUser = defaultUser
             };
             categories.Add(cat1);
