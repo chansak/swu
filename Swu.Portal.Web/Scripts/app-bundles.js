@@ -5216,6 +5216,7 @@ var Swu;
                     html += elements;
                 });
                 $('#registered-course').html(html);
+                $('#registered-course-of-child').html(html);
             };
             this.$scope.registerScript = function () {
                 $('#registered-course').owlCarousel({
@@ -5254,9 +5255,54 @@ var Swu;
                         }
                     }
                 });
+                $('#registered-course-of-child').owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    dots: false,
+                    nav: true,
+                    autoplayHoverPause: false,
+                    autoplay: false,
+                    smartSpeed: 700,
+                    navText: [
+                        '<i class="flaticon-left-arrow"></i>',
+                        '<i class="flaticon-arrows-3"></i>'
+                    ],
+                    responsive: {
+                        0: {
+                            items: 1,
+                            center: false
+                        },
+                        480: {
+                            items: 1,
+                            center: false
+                        },
+                        600: {
+                            items: 1,
+                            center: false
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 2
+                        },
+                        1200: {
+                            items: 3
+                        }
+                    }
+                });
             };
             this.$scope.gotoCourse = function (id) {
                 $state.go('course', { id: id });
+            };
+            this.$scope.loginAsChild = function (id) {
+                _this.$scope.childScope = true;
+                _this.profileService.getCourses(id).then(function (response) {
+                    _this.$scope.numberOfRegistered = response.length;
+                    _this.$scope.registeredCourses = response;
+                    _this.$scope.swapLanguage(_this.$rootScope.lang);
+                    _this.$scope.render(_this.$scope.registeredCourses);
+                }, function (error) { });
             };
             this.init();
         }

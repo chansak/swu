@@ -26,6 +26,9 @@
         registerScript(): void;
 
         gotoCourse(id: string): void;
+
+        childScope: boolean;
+        loginAsChild(id: string): void;
     }
 
     @Module("app")
@@ -254,9 +257,46 @@
                     html += elements;
                 });
                 $('#registered-course').html(html);
+                $('#registered-course-of-child').html(html);
             }
             this.$scope.registerScript = () => {
                 $('#registered-course').owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    dots: false,
+                    nav: true,
+                    autoplayHoverPause: false,
+                    autoplay: false,
+                    smartSpeed: 700,
+                    navText: [
+                        '<i class="flaticon-left-arrow"></i>',
+                        '<i class="flaticon-arrows-3"></i>'
+                    ],
+                    responsive: {
+                        0: {
+                            items: 1,
+                            center: false
+                        },
+                        480: {
+                            items: 1,
+                            center: false
+                        },
+                        600: {
+                            items: 1,
+                            center: false
+                        },
+                        768: {
+                            items: 2
+                        },
+                        992: {
+                            items: 2
+                        },
+                        1200: {
+                            items: 3
+                        }
+                    }
+                });
+                $('#registered-course-of-child').owlCarousel({
                     loop: true,
                     margin: 30,
                     dots: false,
@@ -296,6 +336,16 @@
             this.$scope.gotoCourse = (id: string) => {
                 $state.go('course', { id: id });
             };
+            this.$scope.loginAsChild = (id:string) => {
+                this.$scope.childScope = true;
+                this.profileService.getCourses(id).then((response) => {
+                    this.$scope.numberOfRegistered = response.length;
+                    this.$scope.registeredCourses = response;
+                    this.$scope.swapLanguage(this.$rootScope.lang);
+                    this.$scope.render(this.$scope.registeredCourses);
+                    //this.$scope.registerScript();
+                }, (error) => { });
+            }
             this.init();
         }
         init(): void {

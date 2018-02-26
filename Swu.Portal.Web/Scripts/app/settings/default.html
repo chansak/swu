@@ -242,8 +242,28 @@
                                     <div class="col-md-6">
                                         <ul class="list-inline irs-cl-teacher-info" ng-show="child != null">
                                             <li class="irs-cl-thumb"><img class="img-circle" ng-src="../../../../{{child.imageUrl}}" style="width:50px;height:50px" alt="s3.png" src="../../../../Content/images/courses/s4.png"></li>
-                                            <li class="irs-cl-info"><h3>{{child.firstName}} {{child.lastName}}</h3></li>
+                                            <li class="irs-cl-info"><h3 ng-click="loginAsChild(child.id)">{{child.firstName}} {{child.lastName}}</h3></li>
                                         </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="childScope">
+            <div class="col-md-12">
+                <div class="irs-courses-details">
+                    <div class="irs-cdetails-tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a data-target="#s1" aria-controls="s1" role="tab" data-toggle="tab">Registered Courses</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="s1">
+                                <h3>Showing {{numberOfRegistered}} results</h3>
+                                <div class="col-md-4">
+                                    <div class="irs-td-carousel" id="registered-course-of-child">
                                     </div>
                                 </div>
                             </div>
