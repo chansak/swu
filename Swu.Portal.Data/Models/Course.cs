@@ -28,6 +28,7 @@ namespace Swu.Portal.Data.Models
         public decimal Price { get; set; }
         public int NumberOfViews { get; set; }
         public string Language { get; set; }
+        public string Year { get; set; }
 
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]

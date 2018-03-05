@@ -269,7 +269,7 @@ var Swu;
             committee_en: "Programme Commitee (ENG)",
             board: "Webboard",
             faq: "FAQ",
-            alumni: "Alumin",
+            alumni: "Alumni",
             qualification: "Qualification",
             studyplan: "Study plan",
             assessment: "Assessment",

@@ -106,7 +106,8 @@ namespace Swu.Portal.Web.Api
                 CategoryId = course.CategoryId,
                 CreatedDate = course.CreatedDate,
                 CreatedUser = course.CreatedUserId,
-                UpdatedDate = course.UpdateDate
+                UpdatedDate = course.UpdateDate,
+                Year = course.Year
             };
         }
         public static Curriculum ToEntity(this CurriculumProxy curriculum)

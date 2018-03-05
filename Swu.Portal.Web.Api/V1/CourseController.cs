@@ -293,6 +293,7 @@ namespace Swu.Portal.Web.Api
                     c.CategoryId = course.CategoryId;
                     c.UpdatedDate = this._datetimeRepository.Now();
                     c.UpdatedUser = course.CreatedUserId;
+                    c.Year = course.Year;
                     this._courseService.Update(c);
                 }
                 return Request.CreateResponse(HttpStatusCode.OK);

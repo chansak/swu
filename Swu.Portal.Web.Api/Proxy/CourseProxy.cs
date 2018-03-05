@@ -45,6 +45,9 @@ namespace Swu.Portal.Web.Api.Proxy
         [JsonProperty(PropertyName = "lang")]
         public string Language { get; set; }
 
+        [JsonProperty(PropertyName = "year")]
+        public string Year { get; set; }
+
         [JsonProperty(PropertyName = "createdUserId")]
         public string CreatedUserId { get; set; }
         [JsonProperty(PropertyName = "createdDate")]
@@ -77,6 +80,7 @@ namespace Swu.Portal.Web.Api.Proxy
             BigImageUrl = c.BigImageUrl;
             CategoryId = c.CategoryId;
             CategoryName = c.Category.Title_TH;
+            Year = c.Year;
         }
     }
 }
