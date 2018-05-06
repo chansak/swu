@@ -364,6 +364,16 @@ module Swu {
                 }
             };
         })
+        .directive('autoFocus', function ($timeout) {
+            return {
+                restrict: 'AC',
+                link: function (_scope, _element) {
+                    $timeout(function () {
+                        _element[0].focus();
+                    }, 0);
+                }
+            };
+        })
         .run(["$state", "$http", "$rootScope", "AppConstant", "AuthServices", "$window", function ($state: ng.ui.IStateService, $http: ng.IHttpService, $rootScope: IRootScope, AppConstant: AppConstant, auth: IAuthServices, $window: ng.IWindowService) {
             $rootScope.$on('$stateChangeStart', function (evt, to, params) {
                 console.log('next state:' + to.name);
