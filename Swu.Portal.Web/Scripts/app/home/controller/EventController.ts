@@ -47,7 +47,6 @@
                                         <div class='irs-edate-time'>\
                                             <ul class='list-unstyled'>\
                                                 <li><a href='#'> <span class='flaticon-clock text-thm2'></span> Date: "+ value.displayStartDate + " </a></li>\
-                                                <li><a href='#'> <span class='flaticon-clock-1 text-thm2' > </span> Time: "+ value.displayStartTime + "</a></li>\
                                                 <li><a href='#'> <span class='flaticon-buildings text-thm2' > </span> "+ value.place + "</a></li>\
                                             </ul>\
                                             <p> "+ value.description + "</p>\
