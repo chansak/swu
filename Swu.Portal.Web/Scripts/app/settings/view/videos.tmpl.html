@@ -47,7 +47,7 @@
         <div class="modal-footer">
             <div class="form-group">
                 <div class="col-sm-12">
-                    <button class="btn btn-danger pull-left" type="button" ng-click="delete(id)">Delete</button>
+                    <button class="btn btn-danger pull-left" type="button" ng-show="mode=='2'" ng-click="delete(id)">Delete</button>
                     <button class="btn btn-warning pull-right" type="button" ng-click="cancel()">Cancel</button>
                     <button type="button" class="btn btn-default pull-right" ng-click="save()">Save</button>
                 </div>
