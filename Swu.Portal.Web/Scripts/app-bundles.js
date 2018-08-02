@@ -5350,6 +5350,7 @@ var Swu;
             };
             this.$scope.paginate = function (data, displayData, pageSize, currentPage) {
                 displayData = data.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+                console.log(displayData);
                 _this.$scope.displayUsers = displayData;
             };
             this.$scope.changePage = function (page) {
@@ -5425,7 +5426,6 @@ var Swu;
                     _this.$scope.users = _.filter(response, function (item, index) {
                         return item.selectedRoleName != null;
                     });
-                    console.log(_this.$scope.users);
                     _this.$scope.totalPageNumber = _this.$scope.getTotalPageNumber();
                     _this.$scope.paginate(_this.$scope.users, _this.$scope.displayUsers, _this.$scope.pageSize, _this.$scope.currentPage);
                     _this.$scope.waiting = _.filter(response, function (item, index) {

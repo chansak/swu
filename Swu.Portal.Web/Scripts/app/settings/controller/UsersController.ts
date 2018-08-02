@@ -24,6 +24,7 @@
             };
             this.$scope.paginate = (data: IUserProfile[], displayData: IUserProfile[], pageSize: number, currentPage: number) => {
                 displayData = data.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+                console.log(displayData);
                 this.$scope.displayUsers = displayData;
             };
             this.$scope.changePage = (page: number) => {
@@ -101,7 +102,6 @@
                     this.$scope.users = _.filter(response, function (item, index) {
                         return item.selectedRoleName != null;
                     });
-                    console.log(this.$scope.users);
                     this.$scope.totalPageNumber = this.$scope.getTotalPageNumber();
                     this.$scope.paginate<IUserProfile>(this.$scope.users, this.$scope.displayUsers, this.$scope.pageSize, this.$scope.currentPage);
 

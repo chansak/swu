@@ -181,7 +181,7 @@ namespace Swu.Portal.Web.Api
         public List<UserProfile> GetAll()
         {
             var result = new List<UserProfile>();
-            var users = this._applicationUserServices.GetAllUsers().ToList();
+            var users = this._applicationUserServices.GetAllUsers().OrderByDescending(i=>i.CreatedDate).ToList();
             foreach (var u in users)
             {
                 var selectedRoleName = this._applicationUserServices.GetRolesByUserName(u.UserName).FirstOrDefault();
