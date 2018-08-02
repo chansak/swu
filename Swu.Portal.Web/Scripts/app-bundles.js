@@ -6352,7 +6352,7 @@ var Swu;
             };
             this.$scope.changePage2 = function (page) {
                 _this.$scope.currentPage2 = page;
-                _this.$scope.paginate2(_this.$scope.course, _this.$scope.displayCourse, _this.$scope.pageSize, _this.$scope.currentPage2);
+                _this.$scope.paginate2(_this.$scope.research, _this.$scope.displayResearch, _this.$scope.pageSize, _this.$scope.currentPage2);
             };
             this.$scope.next2 = function () {
                 var nextPage = _this.$scope.currentPage2 + 1;
@@ -6375,7 +6375,7 @@ var Swu;
             };
             this.$scope.changePage3 = function (page) {
                 _this.$scope.currentPage3 = page;
-                _this.$scope.paginate3(_this.$scope.course, _this.$scope.displayCourse, _this.$scope.pageSize, _this.$scope.currentPage3);
+                _this.$scope.paginate3(_this.$scope.forum, _this.$scope.displayForum, _this.$scope.pageSize, _this.$scope.currentPage3);
             };
             this.$scope.next3 = function () {
                 var nextPage = _this.$scope.currentPage3 + 1;
@@ -7062,7 +7062,9 @@ var Swu;
                     models.push({ name: "file", value: _this.$scope.file });
                     _this.alumniManagementService.import(models).then(function (response) {
                         _this.toastr.success("Success");
-                    }, function (error) { });
+                    }, function (error) {
+                        _this.toastr.error("File template is not support");
+                    });
                 }
                 else {
                     _this.toastr.error("Time out expired");

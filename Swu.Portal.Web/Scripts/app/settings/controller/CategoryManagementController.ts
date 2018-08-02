@@ -84,7 +84,7 @@
             };
             this.$scope.changePage2 = (page: number) => {
                 this.$scope.currentPage2 = page;
-                this.$scope.paginate2<WebboardCategory>(this.$scope.course, this.$scope.displayCourse, this.$scope.pageSize, this.$scope.currentPage2);
+                this.$scope.paginate2<WebboardCategory>(this.$scope.research, this.$scope.displayResearch, this.$scope.pageSize, this.$scope.currentPage2);
             };
             this.$scope.next2 = () => {
                 var nextPage = this.$scope.currentPage2 + 1;
@@ -110,7 +110,7 @@
             };
             this.$scope.changePage3 = (page: number) => {
                 this.$scope.currentPage3 = page;
-                this.$scope.paginate3<WebboardCategory>(this.$scope.course, this.$scope.displayCourse, this.$scope.pageSize, this.$scope.currentPage3);
+                this.$scope.paginate3<WebboardCategory>(this.$scope.forum, this.$scope.displayForum, this.$scope.pageSize, this.$scope.currentPage3);
             };
             this.$scope.next3 = () => {
                 var nextPage = this.$scope.currentPage3 + 1;

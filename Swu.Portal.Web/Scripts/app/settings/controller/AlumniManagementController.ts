@@ -1,5 +1,5 @@
 ﻿module Swu {
-    interface AlumniManagementScope extends ng.IScope{
+    interface AlumniManagementScope extends ng.IScope {
         file: any;
 
         save(): void;
@@ -11,11 +11,13 @@
         constructor(private $scope: AlumniManagementScope, private $state: ng.ui.IStateService, private auth: IAuthServices, private toastr: Toastr, private alumniManagementService: IalumniManagementService) {
             this.$scope.save = () => {
                 if (this.auth.isLoggedIn()) {
-                        var models: NamePairValue[] = [];
-                        models.push({ name: "file", value: this.$scope.file });
-                        this.alumniManagementService.import(models).then((response) => {
-                            this.toastr.success("Success");
-                        }, (error) => { });
+                    var models: NamePairValue[] = [];
+                    models.push({ name: "file", value: this.$scope.file });
+                    this.alumniManagementService.import(models).then((response) => {
+                        this.toastr.success("Success");
+                    }, (error) => {
+                        this.toastr.error("File template is not support");
+                    });
                 } else {
                     this.toastr.error("Time out expired");
                     this.$state.go("app", { reload: true });

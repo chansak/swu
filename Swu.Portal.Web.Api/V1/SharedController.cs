@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using System.Data;
 
 namespace Swu.Portal.Web.Api
 {
@@ -484,7 +485,17 @@ namespace Swu.Portal.Web.Api
                             var data = result.Tables[0];
                             for (var row = 0; row < data.Rows.Count; row++)
                             {
-                                if (row == 0) continue;
+                                if (row == 0)
+                                {
+                                    if (ImportFileHeaderValidation(data.Rows[row]))
+                                    {
+                                        continue;
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
+                                }
                                 importData.Add(new AlumniProxy
                                 {
                                     StudentId = data.Rows[row].ItemArray[AlumniColumn.StudentID].ToString(),
@@ -508,6 +519,10 @@ namespace Swu.Portal.Web.Api
                                 });
                             }
                         }
+                        else
+                        {
+                            return Request.CreateResponse(HttpStatusCode.InternalServerError);
+                        }
                     }
                 }
                 return Request.CreateResponse(HttpStatusCode.OK);
@@ -516,6 +531,12 @@ namespace Swu.Portal.Web.Api
             {
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
+        }
+
+        private bool ImportFileHeaderValidation(DataRow dataRow)
+        {
+            return
+                (dataRow.ItemArray[AlumniColumn.StudentID].ToString() == "StudentId" && dataRow.ItemArray[AlumniColumn.FullName_TH].ToString() == "FullName_TH" && dataRow.ItemArray[AlumniColumn.FullName_EN].ToString() == "FullName_EN" && dataRow.ItemArray[AlumniColumn.GraduatedYear].ToString() == "GraduatedYear");
         }
     }
 }
