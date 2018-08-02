@@ -30,12 +30,18 @@
                     var models: NamePairValue[] = [];
                     models.push({ name: "title", value: this.$scope.album.title });
                     models.push({ name: "userId", value: this.$scope.currentUser.id });
-                    _.forEach($scope.files, (value, key) => {
+                    var size = 0;
+                    _.forEach($scope.files, (value:File, key:number) => {
                         models.push({ name: "file", value: value });
+                        size+= value.size;
                     });
-                    this.albumService.createNewAlbum(models).then((response) => {
-                        this.$modalInstance.close(response);
-                    }, (error) => { });
+                    if (size > 4194304) {
+                        alert('max length should not greater than 4MB');
+                    } else {
+                        this.albumService.createNewAlbum(models).then((response) => {
+                            this.$modalInstance.close(response);
+                        }, (error) => { });
+                    }
                 }
             };
             this.$scope.getCurrentUser = () => {

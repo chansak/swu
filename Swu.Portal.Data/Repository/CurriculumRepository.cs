@@ -11,8 +11,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Swu.Portal.Data.Repository
 {
-    public interface ICurriculumRepository : IRepository<Curriculum> {
-        void Add(Curriculum entity,StudentScore score);
+    public interface ICurriculumRepository : IRepository<Curriculum>
+    {
+        void Add(Curriculum entity, StudentScore score);
     }
     public class CurriculumRepository : ICurriculumRepository
     {
@@ -20,7 +21,7 @@ namespace Swu.Portal.Data.Repository
         private readonly UserManager<ApplicationUser> _userManager;
         public CurriculumRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
             this._userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new SwuDBContext()));
         }
         public IEnumerable<Curriculum> List
@@ -28,7 +29,7 @@ namespace Swu.Portal.Data.Repository
             get
             {
                 return this.context.Curriculums
-                    .Include(i=>i.StudentScores)
+                    .Include(i => i.StudentScores)
                     .AsEnumerable();
             }
         }
@@ -58,14 +59,14 @@ namespace Swu.Portal.Data.Repository
 
         public void Add(Curriculum entity, StudentScore score)
         {
-            using (var context = new SwuDBContext()) {
-                var existing = context.Curriculums.Where(i => i.Id == entity.Id).FirstOrDefault();
-                var student = this._userManager.FindById(score.Student.Id);
-                context.Users.Attach(student);
-                context.Curriculums.Attach(existing);
-                existing.StudentScores.Add(score);
-                context.SaveChanges();
-            }
+
+            var existing = this.context.Curriculums.Where(i => i.Id == entity.Id).FirstOrDefault();
+            var student = this._userManager.FindById(score.Student.Id);
+            context.Users.Attach(student);
+            context.Curriculums.Attach(existing);
+            existing.StudentScores.Add(score);
+            context.SaveChanges();
+
         }
     }
 }

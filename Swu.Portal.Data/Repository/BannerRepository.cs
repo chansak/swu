@@ -13,18 +13,15 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public BannerRepository()
         {
-            this.context = new SwuDBContext(); //DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Banner> List
         {
             get
             {
                 List<Banner> data = new List<Banner>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Banners
-                        .ToList();
-                }
+                data = context.Banners
+                    .ToList();
                 return data;
             }
         }
@@ -47,12 +44,9 @@ namespace Swu.Portal.Data.Repository
         public Banner FindById(int Id)
         {
             Banner data = new Banner();
-            using (var context = new SwuDBContext())
-            {
-                data = context.Banners
-                    .Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = this.context.Banners
+                .Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }

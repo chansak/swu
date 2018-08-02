@@ -743,6 +743,16 @@ var Swu;
             }
         };
     })
+        .directive('autoFocus', function ($timeout) {
+        return {
+            restrict: 'AC',
+            link: function (_scope, _element) {
+                $timeout(function () {
+                    _element[0].focus();
+                }, 0);
+            }
+        };
+    })
         .run(["$state", "$http", "$rootScope", "AppConstant", "AuthServices", "$window", function ($state, $http, $rootScope, AppConstant, auth, $window) {
             $rootScope.$on('$stateChangeStart', function (evt, to, params) {
                 console.log('next state:' + to.name);
@@ -2098,7 +2108,6 @@ var Swu;
                                         <div class='irs-edate-time'>\
                                             <ul class='list-unstyled'>\
                                                 <li><a href='#'> <span class='flaticon-clock text-thm2'></span> Date: " + value.displayStartDate + " </a></li>\
-                                                <li><a href='#'> <span class='flaticon-clock-1 text-thm2' > </span> Time: " + value.displayStartTime + "</a></li>\
                                                 <li><a href='#'> <span class='flaticon-buildings text-thm2' > </span> " + value.place + "</a></li>\
                                             </ul>\
                                             <p> " + value.description + "</p>\
@@ -2733,12 +2742,19 @@ var Swu;
                     var models = [];
                     models.push({ name: "title", value: _this.$scope.album.title });
                     models.push({ name: "userId", value: _this.$scope.currentUser.id });
+                    var size = 0;
                     _.forEach($scope.files, function (value, key) {
                         models.push({ name: "file", value: value });
+                        size += value.size;
                     });
-                    _this.albumService.createNewAlbum(models).then(function (response) {
-                        _this.$modalInstance.close(response);
-                    }, function (error) { });
+                    if (size > 4194304) {
+                        alert('max length should not greater than 4MB');
+                    }
+                    else {
+                        _this.albumService.createNewAlbum(models).then(function (response) {
+                            _this.$modalInstance.close(response);
+                        }, function (error) { });
+                    }
                 }
             };
             this.$scope.getCurrentUser = function () {

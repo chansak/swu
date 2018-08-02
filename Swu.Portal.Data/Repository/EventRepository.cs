@@ -9,24 +9,21 @@ using System.Data.Entity;
 
 namespace Swu.Portal.Data.Repository
 {
-    public class EventRepository :IRepository<Event>
+    public class EventRepository : IRepository<Event>
     {
         private SwuDBContext context;
         public EventRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Event> List
         {
             get
             {
                 List<Event> data = new List<Event>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Events
-                        .Include(i => i.ApplicationUser)
-                        .ToList();
-                }
+                data = context.Events
+                    .Include(i => i.ApplicationUser)
+                    .ToList();
                 return data;
             }
         }
@@ -49,13 +46,10 @@ namespace Swu.Portal.Data.Repository
         public Event FindById(int Id)
         {
             Event data = new Event();
-            using (var context = new SwuDBContext())
-            {
-                data = context.Events
-                    .Include(i => i.ApplicationUser)
-                    .Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = context.Events
+                .Include(i => i.ApplicationUser)
+                .Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }

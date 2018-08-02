@@ -14,20 +14,17 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public ForumRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Forum> List
         {
             get
             {
                 List<Forum> data = new List<Forum>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Forums
-                        .Include(i => i.ApplicationUser)
-                        .Include(i => i.Comments)
-                        .ToList();
-                }
+                data = context.Forums
+                    .Include(i => i.ApplicationUser)
+                    .Include(i => i.Comments)
+                    .ToList();
                 return data;
             }
         }
@@ -50,13 +47,10 @@ namespace Swu.Portal.Data.Repository
         public Forum FindById(string Id)
         {
             Forum forum = new Forum();
-            using (var context = new SwuDBContext())
-            {
-                forum = context.Forums.Where(i => i.Id == Id)
-                    .Include(i => i.ApplicationUser)
-                    .Include(i => i.Comments)
-                    .FirstOrDefault();
-            }
+            forum = context.Forums.Where(i => i.Id == Id)
+                .Include(i => i.ApplicationUser)
+                .Include(i => i.Comments)
+                .FirstOrDefault();
             return forum;
         }
     }

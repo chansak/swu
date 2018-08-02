@@ -14,7 +14,7 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public CommentRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Comment> List
         {

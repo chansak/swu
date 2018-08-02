@@ -14,7 +14,7 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public VideoRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Video> List
         {
@@ -49,13 +49,10 @@ namespace Swu.Portal.Data.Repository
         public Video FindById(int Id)
         {
             Video data = new Video();
-            using (var context = new SwuDBContext())
-            {
                 data = context.Videos
                     .Include(i => i.ApplicationUser)
                     .Where(i => i.Id == Id)
                     .FirstOrDefault();
-            }
             return data;
         }
     }

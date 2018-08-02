@@ -18,7 +18,7 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public StudentCourseRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<StudentCourse> List
         {
@@ -56,16 +56,10 @@ namespace Swu.Portal.Data.Repository
         public List<StudentCourse> FindByCourseId(string Id)
         {
             List<StudentCourse> data = new List<StudentCourse>();
-            using (var context = new SwuDBContext()) {
                 data = context.StudentCourse
                     .Include(i => i.Student)
                     .Where(i => i.Course.Id == Id).ToList();
-            }
             return data;
-            //var result = this.context.StudentCourse
-            //    .Include(i => i.Student)
-            //    .Where(i => i.Course.Id == Id).AsEnumerable();
-            //return result;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public PhotoAlbumRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<PhotoAlbum> List
         {

@@ -20,11 +20,8 @@ namespace Swu.Portal.Data.Repository
             get
             {
                 List<Alumni> data = new List<Alumni>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Alumni
-                        .ToList();
-                }
+                data = context.Alumni
+                    .ToList();
                 return data;
             }
         }
@@ -47,12 +44,9 @@ namespace Swu.Portal.Data.Repository
         public Alumni FindById(int Id)
         {
             Alumni data = new Alumni();
-            using (var context = new SwuDBContext())
-            {
-                data = context.Alumni
-                    .Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = context.Alumni
+                .Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }

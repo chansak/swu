@@ -14,20 +14,17 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public ResearchRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Research> List
         {
             get
             {
                 List<Research> data = new List<Research>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Research
-                        .Include(i => i.ApplicationUser)
-                        .Include(i => i.AttachFiles)
-                        .ToList();
-                }
+                data = context.Research
+                    .Include(i => i.ApplicationUser)
+                    .Include(i => i.AttachFiles)
+                    .ToList();
                 return data;
             }
         }
@@ -50,13 +47,10 @@ namespace Swu.Portal.Data.Repository
         public Research FindById(string Id)
         {
             Research research = new Research();
-            using (var context = new SwuDBContext())
-            {
-                research = context.Research.Where(i => i.Id == Id)
-                        .Include(i => i.ApplicationUser)
-                        .Include(i => i.AttachFiles)
-                    .FirstOrDefault();
-            }
+            research = context.Research.Where(i => i.Id == Id)
+                    .Include(i => i.ApplicationUser)
+                    .Include(i => i.AttachFiles)
+                .FirstOrDefault();
             return research;
         }
     }

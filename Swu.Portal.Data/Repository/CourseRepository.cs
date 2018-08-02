@@ -17,25 +17,22 @@ namespace Swu.Portal.Data.Repository
         public CourseRepository(IConfigurationRepository configRepository)
         {
             this._configRepository = configRepository;
-            this.context = new SwuDBContext(); //DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Course> List
         {
             get
             {
                 List<Course> data = new List<Course>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Courses
-                        .Include(i => i.Category)
-                            .Include(i => i.Curriculums)
-                            .Include(i => i.Students)
-                            .Include(i => i.Teachers)
-                            .Include(i => i.PhotoAlbums)
-                            .Include(i => i.ApplicationUser)
-                        .Where(i=>i.Id != _configRepository.dummyCourse)
-                        .ToList();
-                }
+                data = context.Courses
+                    .Include(i => i.Category)
+                        .Include(i => i.Curriculums)
+                        .Include(i => i.Students)
+                        .Include(i => i.Teachers)
+                        .Include(i => i.PhotoAlbums)
+                        .Include(i => i.ApplicationUser)
+                    .Where(i => i.Id != _configRepository.dummyCourse)
+                    .ToList();
                 return data;
             }
         }
@@ -57,18 +54,15 @@ namespace Swu.Portal.Data.Repository
         public Course FindById(string Id)
         {
             Course data = new Course();
-            using (var context = new SwuDBContext())
-            {
-                data = context.Courses
-                    .Include(i => i.Category)
-                        .Include(i => i.Curriculums)
-                        .Include(i => i.Students)
-                        .Include(i => i.Teachers)
-                        .Include(i => i.PhotoAlbums)
-                        .Include(i => i.ApplicationUser)
-                    .Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = this.context.Courses
+                .Include(i => i.Category)
+                    .Include(i => i.Curriculums)
+                    .Include(i => i.Students)
+                    .Include(i => i.Teachers)
+                    .Include(i => i.PhotoAlbums)
+                    .Include(i => i.ApplicationUser)
+                .Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }

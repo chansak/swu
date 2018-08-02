@@ -13,7 +13,7 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public PhotoRepository()
         {
-            this.context = DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<Photo> List
         {

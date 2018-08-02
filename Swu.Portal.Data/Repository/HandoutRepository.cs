@@ -20,11 +20,8 @@ namespace Swu.Portal.Data.Repository
             get
             {
                 List<Handout> data = new List<Handout>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.Handout
-                        .ToList();
-                }
+                data = context.Handout
+                    .ToList();
                 return data;
             }
         }
@@ -47,12 +44,9 @@ namespace Swu.Portal.Data.Repository
         public Handout FindById(int Id)
         {
             Handout data = new Handout();
-            using (var context = new SwuDBContext())
-            {
-                data = context.Handout
-                    .Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = context.Handout
+                .Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }

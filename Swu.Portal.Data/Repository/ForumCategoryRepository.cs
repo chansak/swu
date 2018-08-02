@@ -13,16 +13,14 @@ namespace Swu.Portal.Data.Repository
         private SwuDBContext context;
         public ForumCategoryRepository()
         {
-            this.context = new SwuDBContext();//DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<ForumCategory> List
         {
             get
             {
                 List<ForumCategory> data = new List<ForumCategory>();
-                using (var context = new SwuDBContext()) {
-                    data = context.ForumCategory.ToList();
-                }
+                data = context.ForumCategory.ToList();
                 return data;
             }
         }
@@ -46,11 +44,8 @@ namespace Swu.Portal.Data.Repository
         public ForumCategory FindById(int Id)
         {
             ForumCategory data = new ForumCategory();
-            using (var context = new SwuDBContext())
-            {
-                data = context.ForumCategory.Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = context.ForumCategory.Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }

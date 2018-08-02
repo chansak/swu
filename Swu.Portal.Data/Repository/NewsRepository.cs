@@ -9,24 +9,21 @@ using System.Data.Entity;
 
 namespace Swu.Portal.Data.Repository
 {
-    public class NewsRepository:IRepository<News>
+    public class NewsRepository : IRepository<News>
     {
         private SwuDBContext context;
         public NewsRepository()
         {
-            this.context = new SwuDBContext(); //DbContextFactory.Instance.GetOrCreateContext();
+            this.context = new SwuDBContext();
         }
         public IEnumerable<News> List
         {
             get
             {
                 List<News> data = new List<News>();
-                using (var context = new SwuDBContext())
-                {
-                    data = context.News
-                        .Include(i => i.ApplicationUser)
-                        .ToList();
-                }
+                data = context.News
+                    .Include(i => i.ApplicationUser)
+                    .ToList();
                 return data;
             }
         }
@@ -49,13 +46,10 @@ namespace Swu.Portal.Data.Repository
         public News FindById(int Id)
         {
             News data = new News();
-            using (var context = new SwuDBContext())
-            {
-                data = context.News
-                    .Include(i => i.ApplicationUser)
-                    .Where(i => i.Id == Id)
-                    .FirstOrDefault();
-            }
+            data = context.News
+                .Include(i => i.ApplicationUser)
+                .Where(i => i.Id == Id)
+                .FirstOrDefault();
             return data;
         }
     }
