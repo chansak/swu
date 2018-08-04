@@ -2973,8 +2973,10 @@ var Swu;
                         _this.$scope.canSeeQuizeResult = _.filter(_this.$scope.courseDetail.students, function (item, index) {
                             return item.id.toString() == _this.$scope.getCurrentUser().id && item.activated;
                         }).length > 0;
-                        if (_this.$scope.hasPermission) {
-                            _this.$scope.canTakeCourse = false;
+                        if (_this.$scope.courseDetail.students.length == 0) {
+                            if (_this.$scope.getCurrentUser().selectedRoleName == "Student") {
+                                _this.$scope.canTakeCourse = true;
+                            }
                         }
                         else {
                             _this.$scope.canTakeCourse = _.filter(_this.$scope.courseDetail.students, function (item, index) {

@@ -59,9 +59,11 @@
                             return item.id.toString() == this.$scope.getCurrentUser().id && item.activated;
                         }).length > 0;
 
-                        //is member
-                        if (this.$scope.hasPermission) {
-                            this.$scope.canTakeCourse = false;
+                        //is student who doesn't took the course yet
+                        if (this.$scope.courseDetail.students.length == 0) {
+                            if (this.$scope.getCurrentUser().selectedRoleName == "Student") {
+                                this.$scope.canTakeCourse = true;
+                            }
                         } else {
                             this.$scope.canTakeCourse = _.filter(this.$scope.courseDetail.students, (item: IStudentDetail, index: number) => {
                                 return item.id.toString() == this.$scope.getCurrentUser().id && this.$scope.getCurrentUser().selectedRoleName == "Student";
