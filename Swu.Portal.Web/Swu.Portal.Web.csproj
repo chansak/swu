@@ -1128,10 +1128,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Scripts\Views\Web.config" />
-    <Content Include="Scripts\Views\_ViewStart.cshtml" />
-    <Content Include="Scripts\Views\Shared\_Layout.cshtml" />
-    <Content Include="Scripts\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
