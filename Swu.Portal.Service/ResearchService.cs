@@ -44,6 +44,15 @@ namespace Swu.Portal.Service
                 var existing = context.Research
                     .Where(i => i.Id == research.Id).Include(i => i.AttachFiles)
                     .FirstOrDefault();
+                existing.ShortDescription = research.ShortDescription;
+                existing.FullDescription = research.FullDescription;
+                existing.CategoryId = research.CategoryId;
+                existing.CreatorName = research.CreatorName;
+                existing.Contributor = research.Contributor;
+                existing.Name_EN = research.Name_EN;
+                existing.Name_TH = research.Name_TH;
+                existing.PublishDate = research.PublishDate;
+                existing.Publisher = research.Publisher;
                 context.Entry(existing).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();
             }

@@ -18,7 +18,7 @@
         title: string;
 
         edit(id: number): void;
-        delete(): void;
+        delete(id:number): void;
         validate(): void;
         isValid(): boolean;
         cancel(): void;
@@ -61,8 +61,10 @@
                 }
 
             }
-            $scope.delete = () => {
-
+            $scope.delete = (id:number) => {
+                    this.courseService.removeCurriculum(id).then((response) => {
+                        this.$modalInstance.close();
+                    }, (error) => { });
             }
             this.init();
         }
@@ -72,10 +74,10 @@
             this.$scope.types.push({ id: CurriculumType.exam, title: "Exam" });
             if (this.$scope.mode == 1) {
                 this.$scope.mode = actionMode.addNew;
-                this.$scope.title = "Add New Course";
+                this.$scope.title = "Add New Curriculum";
                 this.$scope.selectedType = _.first(this.$scope.types).id.toString();
             } else if (this.$scope.mode == 2) {
-                this.$scope.title = "Edit Course";
+                this.$scope.title = "Edit Curriculum";
                 this.$scope.mode = actionMode.edit;
                 this.$scope.edit(this.$scope.id);
             }

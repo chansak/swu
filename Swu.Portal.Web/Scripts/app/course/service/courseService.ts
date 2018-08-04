@@ -7,6 +7,7 @@
         getCourseByCriteria(criteria: SearchCritirea): ng.IPromise<ICourseBriefDetail[]>;
         saveCurriculum(curriculum: ICurriculum): ng.IPromise<ICurriculum>;
         getCurriculumById(id: number): ng.IPromise<ICurriculum>;
+        removeCurriculum(id: number): ng.IPromise<HttpStatusCode>;
         takeCourse(courseId: string, studentId: string): ng.IPromise<HttpStatusCode>;
         removeCourse(courseId: string, studentId: string): ng.IPromise<HttpStatusCode>;
         approveTakeCourse(courseId: string, studentId: string): ng.IPromise<HttpStatusCode>;
@@ -35,6 +36,9 @@
         }
         getCurriculumById(id: number): ng.IPromise<ICurriculum> {
             return this.apiService.getData<ICurriculum>("course/getCurriculumById?id=" + id);
+        }
+        removeCurriculum(id: number): ng.IPromise<HttpStatusCode> {
+            return this.apiService.getData<HttpStatusCode>("course/removeCurriculum?id=" + id);
         }
         takeCourse(courseId: string, studentId: string): ng.IPromise<HttpStatusCode> {
             return this.apiService.getData<HttpStatusCode>("course/takeCourse?courseId=" + courseId + "&studentId=" + studentId);

@@ -3422,7 +3422,10 @@ var Swu;
                     }, function (error) { });
                 }
             };
-            $scope.delete = function () {
+            $scope.delete = function (id) {
+                _this.courseService.removeCurriculum(id).then(function (response) {
+                    _this.$modalInstance.close();
+                }, function (error) { });
             };
             this.init();
         }
@@ -3432,11 +3435,11 @@ var Swu;
             this.$scope.types.push({ id: Swu.CurriculumType.exam, title: "Exam" });
             if (this.$scope.mode == 1) {
                 this.$scope.mode = Swu.actionMode.addNew;
-                this.$scope.title = "Add New Course";
+                this.$scope.title = "Add New Curriculum";
                 this.$scope.selectedType = _.first(this.$scope.types).id.toString();
             }
             else if (this.$scope.mode == 2) {
-                this.$scope.title = "Edit Course";
+                this.$scope.title = "Edit Curriculum";
                 this.$scope.mode = Swu.actionMode.edit;
                 this.$scope.edit(this.$scope.id);
             }
@@ -3600,6 +3603,9 @@ var Swu;
         };
         courseService.prototype.getCurriculumById = function (id) {
             return this.apiService.getData("course/getCurriculumById?id=" + id);
+        };
+        courseService.prototype.removeCurriculum = function (id) {
+            return this.apiService.getData("course/removeCurriculum?id=" + id);
         };
         courseService.prototype.takeCourse = function (courseId, studentId) {
             return this.apiService.getData("course/takeCourse?courseId=" + courseId + "&studentId=" + studentId);

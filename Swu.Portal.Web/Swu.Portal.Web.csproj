@@ -1089,10 +1089,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\Views\Web.config" />
+    <Content Include="Scripts\Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1164,6 +1164,7 @@
     <Content Include="Content\MaterialIcons-Regular.woff" />
     <Content Include="Content\MaterialIcons-Regular.woff2" />
     <Content Include="FileUpload\alumni\alumni 2546.xlsx" />
+    <Content Include="FileUpload\uploadTemplate.xlsx" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\angular\angular-animate.min.js.map" />
     <Content Include="Scripts\angular\angular-resource.min.js.map" />
@@ -1175,6 +1176,10 @@
     <Content Include="Scripts\jquery\jquery-2.2.1.min.map" />
     <None Include="Scripts\jquery\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\typings\angularjs\WebEssentials2013.vsix" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\app\alumni\app_routing.ts" />

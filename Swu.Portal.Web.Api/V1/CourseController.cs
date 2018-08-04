@@ -339,6 +339,12 @@ namespace Swu.Portal.Web.Api
             var curriculum = this._curriculumRepository.FindById(id);
             return new CurriculumProxy(curriculum);
         }
+        [HttpGet, Route("removeCurriculum")]
+        public void removeCurriculum(int id)
+        {
+            var curriculum = this._curriculumRepository.FindById(id);
+            this._curriculumRepository.Delete(curriculum);
+        }
         [HttpGet, Route("takeCourse")]
         public void TakeCourse(string courseId, string studentId)
         {
