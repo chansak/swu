@@ -274,5 +274,12 @@ namespace Swu.Portal.Web.Api.V1
                 return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
             }
         }
+        [HttpGet, Route("removeForumById")]
+        public HttpResponseMessage RemoveForumById(string id)
+        {
+            var forum = this._forumRepository.FindById(id);
+            this._forumRepository.Delete(forum);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
     }
 }

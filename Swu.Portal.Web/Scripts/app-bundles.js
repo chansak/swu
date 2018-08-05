@@ -4428,7 +4428,11 @@ var Swu;
                     }, function (error) { });
                 }
             };
-            $scope.delete = function () {
+            this.$scope.delete = function (id) {
+                _this.webboardService.removeForumById(id).then(function (response) {
+                    _this.$modalInstance.close(response);
+                    _this.toastr.success("Success");
+                }, function (error) { });
             };
             this.init();
         }
@@ -4502,7 +4506,11 @@ var Swu;
                     }, function (error) { });
                 }
             };
-            this.$scope.delete = function () {
+            this.$scope.delete = function (id) {
+                _this.webboardService.removeResearchById(id).then(function (response) {
+                    _this.$modalInstance.close(response);
+                    _this.toastr.success("Success");
+                }, function (error) { });
             };
             this.init();
         }
@@ -4594,6 +4602,12 @@ var Swu;
                     break;
                 }
             }
+        };
+        webboardService.prototype.removeResearchById = function (id) {
+            return this.apiService.getData("research/removeResearchById?id=" + id);
+        };
+        webboardService.prototype.removeForumById = function (id) {
+            return this.apiService.getData("forum/removeForumById?id=" + id);
         };
         webboardService.$inject = ['apiService', 'AppConstant'];
         webboardService = __decorate([

@@ -12,13 +12,19 @@
         //createNewPost(models: NamePairValue[]): ng.IPromise<HttpStatusCode>;
         addOrUpdatePost(forum: Webboarditems): ng.IPromise<HttpStatusCode>;
         getPostById(id: string): ng.IPromise<Webboarditems>;
+
         getResearchById(id: string): ng.IPromise<Webboarditems>;
         addOrUpdateResearch(models: NamePairValue[]): ng.IPromise<HttpStatusCode>;
 
         addNewForumCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode>;
         addNewResearchCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode>;
         addNewCourseCategory(category: WebboardCategory): ng.IPromise<HttpStatusCode>;
+
+        removeResearchById(id: string): ng.IPromise<HttpStatusCode>;
+        removeForumById(id: string): ng.IPromise<HttpStatusCode>;
+
         getCategoryById(type: number, id: number): ng.IPromise<WebboardCategory>;
+
     }
     @Module("app")
     @Factory({ name: "webboardService" })
@@ -88,6 +94,12 @@
                     }
                 default: { break; }
             }
+        }
+        removeResearchById(id: string): ng.IPromise<HttpStatusCode> {
+            return this.apiService.getData("research/removeResearchById?id=" + id);
+        }
+        removeForumById(id: string): ng.IPromise<HttpStatusCode> {
+            return this.apiService.getData("forum/removeForumById?id=" + id);
         }
     }
 }

@@ -14,7 +14,7 @@
 
         getCurrentUser(): IUserProfile;
         edit(id: string): void;
-        delete(): void;
+        delete(id:string): void;
         validate(): void;
         isValid(): boolean;
         cancel(): void;
@@ -59,8 +59,11 @@
                 }
 
             }
-            this.$scope.delete = () => {
-
+            this.$scope.delete = (id:string) => {
+                this.webboardService.removeResearchById(id).then((response) => {
+                    this.$modalInstance.close(response);
+                    this.toastr.success("Success");
+                }, (error) => { });
             }
             this.init();
         }

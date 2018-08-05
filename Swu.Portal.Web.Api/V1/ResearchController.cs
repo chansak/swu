@@ -75,6 +75,13 @@ namespace Swu.Portal.Web.Api.V1
             var forum = this._researchRepository.FindById(id);
             return new WebboardItemProxy(forum, this._configurationRepository.DefaultUserImage);
         }
+        [HttpGet, Route("removeResearchById")]
+        public HttpResponseMessage RemoveResearchById(string id)
+        {
+            var research = this._researchRepository.FindById(id);
+            this._researchRepository.Delete(research);
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
         [HttpPost, Route("SaveAsync")]
         public async Task<HttpResponseMessage> PostFormData()
         {
