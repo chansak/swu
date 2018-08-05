@@ -50,6 +50,8 @@ namespace Swu.Portal.Web.Api.Proxy
 
         [JsonProperty(PropertyName = "createdUserId")]
         public string CreatedUserId { get; set; }
+        [JsonProperty(PropertyName = "createdBy")]
+        public string CreatedBy { get; set; }
         [JsonProperty(PropertyName = "createdDate")]
         public DateTime? CreatedDate { get; set; }
         [JsonProperty(PropertyName = "updateDate")]

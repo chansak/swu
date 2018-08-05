@@ -392,6 +392,55 @@ namespace Swu.Portal.Web.Api
             }
             return returnResult;
         }
+        [HttpGet, Route("getTeacherByName")]
+        public List<string> GetTeacherByName(string name, string lang)
+        {
+            var returnResult = new List<string>();
+            if (name != null)
+            {
+                if (lang.Equals("en"))
+                {
+                    var users = this._applicationUserServices.GetAllUsers()
+                                        .Where(
+                                            i =>
+                                                (i.FirstName_EN.ToLower().Contains(name.ToLower()) || i.LastName_EN.ToLower().Contains(name.ToLower()))
+                                            )
+                                        .ToList();
+                    foreach (var user in users)
+                    {
+                        var role = this._applicationUserServices.GetRolesByUserName(user.UserName).FirstOrDefault();
+                        if (role != null)
+                        {
+                            if (role.Equals("Teacher"))
+                            {
+                                returnResult.Add(user.FirstName_EN + " " + user.LastName_EN);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    var users = this._applicationUserServices.GetAllUsers()
+                    .Where(
+                        i =>
+                            (i.FirstName_TH.ToLower().Contains(name.ToLower()) || i.LastName_TH.ToLower().Contains(name.ToLower()))
+                        )
+                    .ToList();
+                    foreach (var user in users)
+                    {
+                        var role = this._applicationUserServices.GetRolesByUserName(user.UserName).FirstOrDefault();
+                        if (role != null)
+                        {
+                            if (role.Equals("Teacher"))
+                            {
+                                returnResult.Add(user.FirstName_TH + " " + user.LastName_TH);
+                            }
+                        }
+                    }
+                }
+            }
+            return returnResult;
+        }
         [HttpGet, Route("approveRequest")]
         public HttpResponseMessage ApproveRequest(string childId, string parentId)
         {

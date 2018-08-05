@@ -1,5 +1,7 @@
 ﻿module Swu {
     interface CourseManagementModalScope extends ng.IScope {
+        currentUser: IUserProfile;
+
         id: string;
         options: SummernoteOptions;
         text: string;
@@ -10,6 +12,11 @@
         file: any;
         title: string;
 
+        refUsers: string[];
+        updateRefUsers(name: string): void;
+        createdBy: string;
+
+        getCurrentUser(): void;
         getCategory(): void;
         edit(id: string): void;
         validate(): void;
@@ -21,10 +28,13 @@
     @Module("app")
     @Controller({ name: "CourseManagementModalController" })
     export class CourseManagementModalController {
-        static $inject: Array<string> = ["$scope", "$state", "courseManagementService", "toastr", "$modalInstance", "profileService", "AuthServices", "webboardService", "id", "mode"];
-        constructor(private $scope: CourseManagementModalScope, private $state: ng.ui.IStateService, private courseManagementService: IcourseManagementService, private toastr: Toastr, private $modalInstance: ng.ui.bootstrap.IModalServiceInstance, private profileService: IprofileService, private auth: IAuthServices, private webboardService: IwebboardService, private id: string, private mode: number) {
+        static $inject: Array<string> = ["$scope", "$rootScope", "$state", "courseManagementService", "userService", "toastr", "$modalInstance", "profileService", "AuthServices", "webboardService", "id", "mode"];
+        constructor(private $scope: CourseManagementModalScope, $rootScope: IRootScope, private $state: ng.ui.IStateService, private courseManagementService: IcourseManagementService, private userService: IuserService, private toastr: Toastr, private $modalInstance: ng.ui.bootstrap.IModalServiceInstance, private profileService: IprofileService, private auth: IAuthServices, private webboardService: IwebboardService, private id: string, private mode: number) {
             this.$scope.id = id;
             this.$scope.mode = mode;
+            this.$scope.getCurrentUser = (): void => {
+                this.$scope.currentUser = this.auth.getCurrentUser();
+            }
             this.$scope.edit = (id: string): void => {
                 this.courseManagementService.getCourseById(id).then((response) => {
                     this.$scope.course = response;
@@ -50,6 +60,9 @@
                         this.$scope.course.categoryName = _.filter(this.$scope.categories, function (item, index) {
                             return item.id == $scope.course.categoryId;
                         })[0].title;
+                        if (this.$scope.currentUser.selectedRoleName == "Officer") {
+                            this.$scope.course.createdBy = this.$scope.createdBy;
+                        }
                         this.$scope.course.createdUserId = this.auth.getCurrentUser().id;
                         models.push({ name: "file", value: this.$scope.file });
                         models.push({ name: "course", value: this.$scope.course });
@@ -68,9 +81,15 @@
                     this.toastr.success("Success");
                 }, (error) => { });
             };
+            $scope.updateRefUsers = (name: string): void => {
+                userService.getTeacherByName(name, $rootScope.lang).then((response) => {
+                    this.$scope.refUsers = response;
+                }, (error) => { });
+            }
             this.init();
         }
         init(): void {
+            this.$scope.getCurrentUser();
             this.webboardService.getCourseCategory().then((response) => {
                 this.$scope.categories = response;
 

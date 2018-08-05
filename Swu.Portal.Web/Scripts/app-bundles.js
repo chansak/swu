@@ -5740,11 +5740,12 @@ var Swu;
 var Swu;
 (function (Swu) {
     var CourseManagementModalController = (function () {
-        function CourseManagementModalController($scope, $state, courseManagementService, toastr, $modalInstance, profileService, auth, webboardService, id, mode) {
+        function CourseManagementModalController($scope, $rootScope, $state, courseManagementService, userService, toastr, $modalInstance, profileService, auth, webboardService, id, mode) {
             var _this = this;
             this.$scope = $scope;
             this.$state = $state;
             this.courseManagementService = courseManagementService;
+            this.userService = userService;
             this.toastr = toastr;
             this.$modalInstance = $modalInstance;
             this.profileService = profileService;
@@ -5754,6 +5755,9 @@ var Swu;
             this.mode = mode;
             this.$scope.id = id;
             this.$scope.mode = mode;
+            this.$scope.getCurrentUser = function () {
+                _this.$scope.currentUser = _this.auth.getCurrentUser();
+            };
             this.$scope.edit = function (id) {
                 _this.courseManagementService.getCourseById(id).then(function (response) {
                     _this.$scope.course = response;
@@ -5779,6 +5783,9 @@ var Swu;
                         _this.$scope.course.categoryName = _.filter(_this.$scope.categories, function (item, index) {
                             return item.id == $scope.course.categoryId;
                         })[0].title;
+                        if (_this.$scope.currentUser.selectedRoleName == "Officer") {
+                            _this.$scope.course.createdBy = _this.$scope.createdBy;
+                        }
                         _this.$scope.course.createdUserId = _this.auth.getCurrentUser().id;
                         models.push({ name: "file", value: _this.$scope.file });
                         models.push({ name: "course", value: _this.$scope.course });
@@ -5798,10 +5805,16 @@ var Swu;
                     _this.toastr.success("Success");
                 }, function (error) { });
             };
+            $scope.updateRefUsers = function (name) {
+                userService.getTeacherByName(name, $rootScope.lang).then(function (response) {
+                    _this.$scope.refUsers = response;
+                }, function (error) { });
+            };
             this.init();
         }
         CourseManagementModalController.prototype.init = function () {
             var _this = this;
+            this.$scope.getCurrentUser();
             this.webboardService.getCourseCategory().then(function (response) {
                 _this.$scope.categories = response;
                 if (_this.$scope.mode == 1) {
@@ -5817,7 +5830,7 @@ var Swu;
             }, function (error) { });
         };
         ;
-        CourseManagementModalController.$inject = ["$scope", "$state", "courseManagementService", "toastr", "$modalInstance", "profileService", "AuthServices", "webboardService", "id", "mode"];
+        CourseManagementModalController.$inject = ["$scope", "$rootScope", "$state", "courseManagementService", "userService", "toastr", "$modalInstance", "profileService", "AuthServices", "webboardService", "id", "mode"];
         CourseManagementModalController = __decorate([
             Swu.Module("app"),
             Swu.Controller({ name: "CourseManagementModalController" })
@@ -7124,6 +7137,9 @@ var Swu;
         };
         userService.prototype.getUsersByName = function (name, lang) {
             return this.apiService.getData("Account/getUsersByName?name=" + name + "&lang=" + lang);
+        };
+        userService.prototype.getTeacherByName = function (name, lang) {
+            return this.apiService.getData("Account/getTeacherByName?name=" + name + "&lang=" + lang);
         };
         userService.prototype.deleteById = function (id) {
             return this.apiService.getData("Account/deleteById?id=" + id);

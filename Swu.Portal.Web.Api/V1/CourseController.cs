@@ -45,7 +45,10 @@ namespace Swu.Portal.Web.Api
         private readonly IBannerService _bannerService;
         private readonly IRepository<Handout> _handoutRepository;
         private readonly IHandoutService _handoutService;
+        private readonly IApplicationUserServices _applicationUserServices;
+
         public CourseController(
+            IApplicationUserServices applicationUserServices,
             IDateTimeRepository datetimeRepository,
             IRepository2<Course> courseRepository,
             IRepository2<PhotoAlbum> photoAlbumRepository,
@@ -65,6 +68,7 @@ namespace Swu.Portal.Web.Api
             IRepository<Handout> handoutRepository,
             IHandoutService handoutService)
         {
+            this._applicationUserServices = applicationUserServices;
             this._datetimeRepository = datetimeRepository;
             this._courseRepository = courseRepository;
             this._photoAlbumRepository = photoAlbumRepository;
@@ -272,6 +276,17 @@ namespace Swu.Portal.Web.Api
                     _path = string.Format("{0}{1}", UPLOAD_DIR, fileName);
                     File.Move(file.LocalFileName, moveTo);
                     course.ImageUrl = string.Format("{0}?{1}", _path, this._datetimeRepository.Now());
+                }
+                if (!string.IsNullOrWhiteSpace(course.CreatedBy)) {
+                    var createdBy = course.CreatedBy.Split(' ');
+                    var user = this._applicationUserServices.GetAllUsers()
+                        .Where(
+                                            i =>
+                                                (i.FirstName_EN.ToLower()
+                                                    .Contains(createdBy[0].ToLower()) || i.LastName_EN.ToLower()
+                                                    .Contains(createdBy[1].ToLower()))
+                                            ).FirstOrDefault();
+                    course.CreatedUserId = user.Id;
                 }
                 if (string.IsNullOrEmpty(course.Id))
                 {
