@@ -15,6 +15,7 @@ namespace Swu.Portal.Service
         Task<ApplicationUser> VerifyAndGetUser(string username,string password);
         bool AddNewUser(ApplicationUser user ,string password,string selectedRoleName);
         bool Update(ApplicationUser user, string selectedRoleName);
+        bool Delete(ApplicationUser user);
         List<ApplicationUser> GetAllUsers();
         List<string> GetRolesByUserName(string userName);
         ApplicationUser getById(string id);
@@ -36,6 +37,11 @@ namespace Swu.Portal.Service
         public bool AddNewUser(ApplicationUser user, string password, string selectedRoleName)
         {
             return this._applicationUserRepository.AddNew(user, password,selectedRoleName);
+        }
+
+        public bool Delete(ApplicationUser user)
+        {
+            return this._applicationUserRepository.Delete(user);
         }
 
         public Task<ApplicationUser> FindByFirstNameAndLastNameEN(string firstName, string lastName)

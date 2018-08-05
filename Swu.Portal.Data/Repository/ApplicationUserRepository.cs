@@ -50,6 +50,7 @@ namespace Swu.Portal.Data.Repository
         ApplicationUser GetUser(string username);
         bool AddNew(ApplicationUser user, string password, string selectedRoleName);
         bool Update(ApplicationUser user, string selectedRoleName);
+        bool Delete(ApplicationUser user);
         List<ApplicationUser> GetAllUsers();
         List<string> GetRolesByUserName(string userName);
         ApplicationUser getById(string id);
@@ -176,10 +177,15 @@ namespace Swu.Portal.Data.Repository
         {
             return this._store.FindByFirstNameAndLastNameTH(firstName, lastName);
         }
-
         public ApplicationUser FindById(string id)
         {
             return this._userManager.FindById(id);
+        }
+
+        public bool Delete(ApplicationUser user)
+        {
+            var deleteResult= this._userManager.Delete(user).Succeeded;
+            return deleteResult;
         }
     }
 }

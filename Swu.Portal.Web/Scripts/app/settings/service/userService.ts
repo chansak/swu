@@ -5,6 +5,8 @@
         getAllUsers(): ng.IPromise<IUserProfile[]>;
         getById(id: string): ng.IPromise<IUserProfile>;
         getUsersByName(name: string, lang: string): ng.IPromise<string[]>;
+        deleteById(id: string): ng.IPromise<HttpStatusCode>;
+
     }
     @Module("app")
     @Factory({ name: "userService" })
@@ -27,6 +29,9 @@
         }
         getUsersByName(name: string, lang: string): ng.IPromise<string[]> {
             return this.apiService.getData<string[]>("Account/getUsersByName?name=" + name + "&lang=" + lang);
+        }
+        deleteById(id: string): ng.IPromise<HttpStatusCode> {
+            return this.apiService.getData("Account/deleteById?id=" + id);
         }
     }
 }

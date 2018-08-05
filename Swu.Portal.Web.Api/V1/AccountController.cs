@@ -485,5 +485,19 @@ namespace Swu.Portal.Web.Api
         {
             this._personalFileService.DeleteFile(id);
         }
+        [HttpGet, Route("deleteById")]
+        public HttpResponseMessage DeleteById(string id)
+        {
+            try
+            {
+                var u = this._applicationUserServices.getById(id);
+                this._applicationUserServices.Delete(u);
+                return Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (System.Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e);
+            }
+        }
     }
 }

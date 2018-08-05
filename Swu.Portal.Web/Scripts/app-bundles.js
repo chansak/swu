@@ -5569,6 +5569,12 @@ var Swu;
                     return false;
                 }
             };
+            this.$scope.delete = function (id) {
+                _this.userService.deleteById(id).then(function (response) {
+                    _this.$modalInstance.close();
+                    _this.toastr.success("Success");
+                }, function (error) { });
+            };
             this.init();
         }
         UsersModalController.prototype.init = function () {
@@ -7118,6 +7124,9 @@ var Swu;
         };
         userService.prototype.getUsersByName = function (name, lang) {
             return this.apiService.getData("Account/getUsersByName?name=" + name + "&lang=" + lang);
+        };
+        userService.prototype.deleteById = function (id) {
+            return this.apiService.getData("Account/deleteById?id=" + id);
         };
         userService.$inject = ['apiService', 'AppConstant'];
         userService = __decorate([

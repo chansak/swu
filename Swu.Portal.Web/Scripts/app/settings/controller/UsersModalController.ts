@@ -13,6 +13,7 @@
         isValid(): boolean;
         cancel(): void;
         submit(): void;
+        delete(id: string): void;
 
         isShowThisSection(name: string): boolean;
     }
@@ -85,6 +86,12 @@
                     console.log($scope.selectedRole == _selectedRoleId);
                     return $scope.selectedRole == _selectedRoleId;
                 } else { return false; }
+            };
+            this.$scope.delete = (id: string): void => {
+                this.userService.deleteById(id).then((response) => {
+                    this.$modalInstance.close();
+                    this.toastr.success("Success");
+                }, (error) => { });
             };
             this.init();
         }
