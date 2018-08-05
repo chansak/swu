@@ -31,17 +31,18 @@
             this.$scope.renderSlide = (sliders: ISlider[]): void => {
                 var html = "";
                 _.forEach(sliders, (value, key) => {
-                    var elements = "<div class='item'>\
-                <div class='caption animatedParent'>\
-                    <div class='irs-text-one animated fadeInUp delay-1250'>\
-                    "+ value.title + "\
-                                </div>\
-                                <div class='irs-text-three animated fadeInUp delay-1500' >\
-                                <p>"+ value.description + "</p>\
-                                    </div>\
-                                        </div>\
-                                        <img class='img-responsive' src= '../../../"+ value.imageUrl + "' alt= '' >\
-                                            </div>";
+                //    var elements = "<div class='item'>\
+                //<div class='caption animatedParent'>\
+                //    <div class='irs-text-one animated fadeInUp delay-1250'>\
+                //    "+ value.title + "\
+                //                </div>\
+                //                <div class='irs-text-three animated fadeInUp delay-1500' >\
+                //                <p>"+ value.description + "</p>\
+                //                    </div>\
+                //                        </div>\
+                //                        <img class='img-responsive' src= '../../../"+ value.imageUrl + "' alt= '' >\
+                //                            </div>";
+                    var elements = "<div class='item'><img class='img-responsive' src= '../../../"+ value.imageUrl + "' alt= '' ></div>";
                     html += elements;
                 });
                 $('#main-slider').html(html);
