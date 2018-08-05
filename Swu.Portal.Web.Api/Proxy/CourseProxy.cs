@@ -34,7 +34,7 @@ namespace Swu.Portal.Web.Api.Proxy
         [JsonProperty(PropertyName = "numberOfQuizes")]
         public int NumberOfQuizes { get; set; }
         [JsonProperty(PropertyName = "numberOfTimes")]
-        public int NumberOfTimes { get; set; }
+        public double NumberOfTimes { get; set; }
         [JsonProperty(PropertyName = "numberOfStudents")]
         public int NumberOfStudents { get; set; }
         [JsonProperty(PropertyName = "numberOfTeachers")]

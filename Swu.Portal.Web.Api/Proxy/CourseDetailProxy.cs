@@ -46,6 +46,7 @@ namespace Swu.Portal.Web.Api.Proxy
                 CreatedUserId = c.Teachers.First().Id,
                 CreatedDate = c.CreatedDate,
             };
+            this.CourseInfo.NumberOfTimes = (this.CourseInfo.NumberOfTimes / 60);
             if (c.Curriculums.Count > 0)
             {
                 foreach (var cur in c.Curriculums)
@@ -102,6 +103,8 @@ namespace Swu.Portal.Web.Api.Proxy
                 NumberOfTeachers = c.Teachers.Count(),
                 NumberOfTimes = c.Curriculums.Sum(i => i.NumberOfTime),
             };
+            //convert number of times to hours
+            this.CourseInfo.NumberOfTimes = (this.CourseInfo.NumberOfTimes/60);
             foreach (var t in c.Teachers)
             {
                 this.Teacher.Add(new TeacherProxy(t));
