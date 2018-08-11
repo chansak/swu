@@ -606,7 +606,6 @@
     <Content Include="Content\images\resource\video-bg.jpg" />
     <Content Include="Content\images\swu.jpg" />
     <Content Include="Content\images\team\1.jpg" />
-    <Content Include="Content\images\team\10.jpg" />
     <Content Include="Content\images\team\2.jpg" />
     <Content Include="Content\images\team\3.jpg" />
     <Content Include="Content\images\team\4.jpg" />
@@ -615,6 +614,17 @@
     <Content Include="Content\images\team\7.jpg" />
     <Content Include="Content\images\team\8.jpg" />
     <Content Include="Content\images\team\9.jpg" />
+    <Content Include="Content\images\team\backup\1.jpg" />
+    <Content Include="Content\images\team\backup\10.jpg" />
+    <Content Include="Content\images\team\backup\11.jpg" />
+    <Content Include="Content\images\team\backup\2.jpg" />
+    <Content Include="Content\images\team\backup\3.jpg" />
+    <Content Include="Content\images\team\backup\4.jpg" />
+    <Content Include="Content\images\team\backup\5.jpg" />
+    <Content Include="Content\images\team\backup\6.jpg" />
+    <Content Include="Content\images\team\backup\7.jpg" />
+    <Content Include="Content\images\team\backup\8.jpg" />
+    <Content Include="Content\images\team\backup\9.jpg" />
     <Content Include="Content\images\team\default.jpg" />
     <Content Include="Content\images\team\event-participater1.jpg" />
     <Content Include="Content\images\team\event-participater2.jpg" />

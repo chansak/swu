@@ -37,11 +37,11 @@ namespace Swu.Portal.Web.Api
                 },
                 new CommitteeProxy {
                     ImageUrl = "Content/images/team/2.jpg",
-                    Name_EN = "Prof.Chairat Neruntarat MD. (Dean, Faculty of Medicine)",
+                    Name_EN = "Assoc.Prof. Pairoj Chongbanyatcharoen, MD. (Dean, Faculty of Medicine)",
                     Position_EN = "Advisory Board",
                     Description_EN = "",
-                    Name_TH = "ศ.นพ.ชัยรัตน์ นิรันตรัตน์ (คณบดี คณะแพทยศาสตร์)",
-                    Position_TH = "ที่ปรึกษา",
+                    Name_TH = "Assoc.Prof. Pairoj Chongbanyatcharoen, MD. (Dean, Faculty of Medicine)",
+                    Position_TH = "Advisory Board",
                     Description_TH = "",
                     Phone = "",
                     Room="",
@@ -60,7 +60,19 @@ namespace Swu.Portal.Web.Api
                     Email=""
                 },
                 new CommitteeProxy {
-                    ImageUrl = "Content/images/team/6.jpg",
+                    ImageUrl = "Content/images/team/4.jpg",
+                    Name_EN = "Asso.Prof. Arucha Treesirichod, M.D. Vice Dean of Academic Affairs",
+                    Position_EN = "Advisory Board",
+                    Description_EN = "",
+                    Name_TH = "Asso.Prof. Arucha Treesirichod, M.D. Vice Dean of Academic Affairs",
+                    Position_TH = "Advisory Board",
+                    Description_TH = "",
+                    Phone = "",
+                    Room="",
+                    Email=""
+                },
+                new CommitteeProxy {
+                    ImageUrl = "Content/images/team/5.jpg",
                     Name_EN = " Assoc.Prof.Ramida Wattanapokasin, PhD.",
                     Position_EN = "Programme Director",
                     Description_EN = "",
@@ -72,7 +84,7 @@ namespace Swu.Portal.Web.Api
                     Email=""
                 },
                 new CommitteeProxy {
-                    ImageUrl = "Content/images/team/7.jpg",
+                    ImageUrl = "Content/images/team/6.jpg",
                     Name_EN = "Assist.Prof.Manapol Kulpraneet, MD.",
                     Position_EN = "Deputy Director",
                     Description_EN = "",
@@ -83,8 +95,10 @@ namespace Swu.Portal.Web.Api
                     Room="",
                     Email=""
                 },
+
+
                 new CommitteeProxy {
-                    ImageUrl = "Content/images/team/10.jpg",
+                    ImageUrl = "Content/images/team/7.jpg",
                     Name_EN = "Dr.Amarin Narkwichean",
                     Position_EN = "Programme Secretary and Commitee",
                     Description_EN = "",
@@ -114,18 +128,6 @@ namespace Swu.Portal.Web.Api
                     Description_EN = "",
                     Name_TH = "พญ. พิชญา เพชรบรม",
                     Position_TH = "กรรมการ",
-                    Description_TH = "",
-                    Phone = "",
-                    Room="",
-                    Email=""
-                },
-                new CommitteeProxy {
-                    ImageUrl = "Content/images/team/11.jpg",
-                    Name_EN = "ASSO.PROF. NARONGCHAI  YINGSAKMONGKOL, M.D.",
-                    Position_EN = "Vice Dean of Academic Affairs",
-                    Description_EN = "",
-                    Name_TH = "ASSO.PROF. NARONGCHAI  YINGSAKMONGKOL, M.D.",
-                    Position_TH = "Vice Dean of Academic Affairs",
                     Description_TH = "",
                     Phone = "",
                     Room="",
@@ -175,7 +177,7 @@ namespace Swu.Portal.Web.Api
                     Room="",
                     Email="susan.anderson@nottingham.ac.uk"
                 },
-                
+
                 new CommitteeProxy {
                     ImageUrl = "Content/images/team/Yvonne.jpg",
                     Name_EN = "Dr. Yvonne Mbaki",
