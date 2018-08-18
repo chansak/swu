@@ -291,13 +291,15 @@
             };
             this.$scope.getHandouts = (id: number): void => {
                 var courseId = this.$scope.id;
-                this.courseService.getHandouts(courseId).then((response) => {
-                    this.$scope.handouts = response;
-                    console.log(response);
-                    _.map(this.$scope.handouts, function (h) {
-                        h.name = h.path.split('\\').pop().split('/').pop()
-                    });
-                }, (error) => { });
+                if (this.$scope.getCurrentUser() != null) {
+                    this.courseService.getHandouts(courseId).then((response) => {
+                        this.$scope.handouts = response;
+                        console.log(response);
+                        _.map(this.$scope.handouts, function (h) {
+                            h.name = h.path.split('\\').pop().split('/').pop()
+                        });
+                    }, (error) => { });
+                }
             };
             this.$scope.removeHandout = (id: number): void => {
                 this.courseService.removeHandout(id).then((response) => {

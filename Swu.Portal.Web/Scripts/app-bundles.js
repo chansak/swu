@@ -3194,13 +3194,15 @@ var Swu;
             };
             this.$scope.getHandouts = function (id) {
                 var courseId = _this.$scope.id;
-                _this.courseService.getHandouts(courseId).then(function (response) {
-                    _this.$scope.handouts = response;
-                    console.log(response);
-                    _.map(_this.$scope.handouts, function (h) {
-                        h.name = h.path.split('\\').pop().split('/').pop();
-                    });
-                }, function (error) { });
+                if (_this.$scope.getCurrentUser() != null) {
+                    _this.courseService.getHandouts(courseId).then(function (response) {
+                        _this.$scope.handouts = response;
+                        console.log(response);
+                        _.map(_this.$scope.handouts, function (h) {
+                            h.name = h.path.split('\\').pop().split('/').pop();
+                        });
+                    }, function (error) { });
+                }
             };
             this.$scope.removeHandout = function (id) {
                 _this.courseService.removeHandout(id).then(function (response) {
