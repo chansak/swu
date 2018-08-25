@@ -40,7 +40,7 @@
                                     <h4 class='irs-bp-title'>"+ value.title + "</h3>\
                                         <div class='irs-bp-meta' >\
                                             <ul class='list-inline irs-bp-meta-dttime' >\
-                                                <li><span class='flaticon-clock-1' > </span>"+ moment(value.startDate).format('DD/MM/YYYY h:mm:ss a') + "</li>\
+                                                <li><span class='flaticon-clock-1' > </span>"+ moment(value.startDate).format('DD/MM/YYYY') + "</li>\
                                             </ul>\
                                         </div>\
                                 </div>\

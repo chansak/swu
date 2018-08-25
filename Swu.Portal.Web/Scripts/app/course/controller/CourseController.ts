@@ -114,7 +114,7 @@
                                 <a href='../../../../"+ value.imageUrl + "' title= '" + value.name + "' by='" + value.uploadBy + "'>\
                                     <img class='img-responsive' alt= '' src= '../../../../"+ value.imageUrl + "'></a>\
                             </div>\
-                        <div class='resources-description' ><p>"+ value.displayPublishedDate + "</p>\
+                        <div class='resources-description' >\
                         <h4>"+ value.name + "</h4></div></div>\
                     </div>";
                     html += elements;

@@ -71,22 +71,22 @@ namespace Swu.Portal.Web.Api
                     new CommitmentProxy {
                         Title_EN="Objective 1",
                         Description_EN="To enhance the learning opportunity of medical programme from both national and international schools in Thailand",
-                        Title_TH="Objective 1",
-                        Description_TH="To enhance the learning opportunity of medical programme from both national and international schools in Thailand",
+                        Title_TH="วัตถุประสงค์ที่ 1",
+                        Description_TH="เพื่อเพิ่มโอกาสทางการศึกษาหลักสูตรแพทยศาสตรบัณฑิตจากสถานศึกษาในประเทศไทย",
                         IconCss="fa fa-university"
                     },
                     new CommitmentProxy {
                         Title_EN="Objective 2",
                         Description_EN="To produce the knowledgeable medical graduates who can use the medical sciences knowledge from the UK and apply it to clinical practice in Thailand",
-                        Title_TH="Objective 2",
-                        Description_TH="To produce the knowledgeable medical graduates who can use the medical sciences knowledge from the UK and apply it to clinical practice in Thailand",
+                        Title_TH="วัตถุประสงค์ที่ 2",
+                        Description_TH="เพื่อผลิตบัณฑิตแพทย์ที่มีความรู้ความสามารถ และนำความรู้ ประสบการณ์ทางการศึกษาด้านวิทยาศาสตร์การแพทย์จากสหราชอาณาจักร มาประยุกต์ใช้ควบคู่ไปกับความรู้ทางด้านคลินิกที่ศึกษาในประเทศไทย ในการดูแลผู้ป่วยแบบองค์รวม",
                         IconCss="fa fa-user-md"
                     },
                     new CommitmentProxy {
                         Title_EN="Objective 3",
                         Description_EN="To produce medical graduates who can provide the efficient health care services to the society both in government and private sectors",
-                        Title_TH="Objective 3",
-                        Description_TH="To produce medical graduates who can provide the efficient health care services to the society both in government and private sectors",
+                        Title_TH="วัตถุประสงค์ที่ 3",
+                        Description_TH="เพื่อผลิตบัณฑิตแพทย์ที่สามารถให้บริการทางด้านสาธารณสุขแก่สังคมได้อย่างมีประสิทธิภาพ ไม่ว่าจะปฏิบัติงานอยู่ในภาครัฐ หรือภาคเอกชน สามารถปฏิบัติงานร่วมกับผู้ร่วมงานได้อย่างมีประสิทธิภาพ มีคุณธรรม จริยธรรม มีความใฝ่รู้ มีความคิดริเริ่มสร้างสรรค์ รับผิดชอบ มีศีลธรรม มีความเสียสละ ทันต่อความก้าวหน้าทางวิชาการ สามารถวิเคราะห์ และแก้ไขปัญหาแบบวิทยาศาสตร์ และวิจัยปัญหาทางสุขภาพ เพื่อนำผลมาใช้ให้เกิดประโยชน์ด้านการพัฒนาการรักษาพยาบาลของสังคมไทย",
                         IconCss="fa fa-hospital-o"
                     }
                 };

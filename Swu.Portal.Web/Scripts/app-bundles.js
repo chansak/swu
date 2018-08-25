@@ -289,7 +289,7 @@ var Swu;
         },
         event: {
             title: "Our Edu Hub Events",
-            description: "Events listed here are open to everyone. Whether you want to listen to a lecture, learn a new skill, take in a concert or an exhibition, see a play staged by our university students or attend one of our sporting events."
+            description: "Events listed here are open to everyone. You can follow up the activities of the Joint Medical programme, such as admission Announcement or new activities of the Joint Medical programme by our university students"
         },
         commitments: {
             title: "Objectives"
@@ -305,19 +305,19 @@ var Swu;
             description: "Our alumni are very content with our classes and 99% of them managed to find a job in their field. Check out our full testimonials from our best students worldwide.",
             checkfaq: "Check our FAQ’s",
             thumb1: {
-                quote: "“หลักสูตรนี้มีประโยชน์ในการเพิ่มความมั่นใจและความสามารถในการปฏิสัมพันธ์กับคนใข้”",
+                quote: "“This course is useful for increasing the confidence and ability to interact with people.”",
                 by: "นายภาคภูมิ  จันทราพิทักษ์",
                 position: "นักศึกษา",
                 profileImage: "59107010014.png"
             },
             thumb2: {
-                quote: "“รู้สึกอบอุ่น ทุกคนคอยดูแลกัน เป็นกันเอง เหมือนเป็นครอบครัวเดียวกันค่ะ”",
+                quote: "“I feel as warm as everyone is as friendly as a family.”",
                 by: "นางสาวช่อณพัชร สุวรรณรักษ์",
                 position: "นักศึกษา",
                 profileImage: "60107010009.png"
             },
             thumb3: {
-                quote: "“การที่ได้เรียนในหลักสูตรโครงการร่วมฯ เป็นโอกาสที่ดีที่จะได้ศึกษาวิชาแพทยศาสตร์ทั้งในระบบไทยและระบบต่างประเทศ ทำให้ได้สัมผัสถึงวิธีการเรียนการสอน นวัตกรรมทางการแพทย์ และระบบสาธารณสุขของทั้งในประเทศไทยและในต่างประเทศ ซึ่งพอเรียนจบแล้ว สามารถนำข้อดีและข้อเสียของทั้งสองระบบมาปรับใช้ในอนาคตได้ นอกจากนี้ การได้ทำงานวิจัยเบื้องต้นซึ่งเป็นส่วนหนึ่งของปริญญา Bachelor of Medical Sciences ทำให้เราได้พัฒนาทักษะที่ต้องใช้ในการทำงานวิจัย การเรียนในชั้นพรีคลินิกที่มหาวิทยาลัยนอตติงแฮมนั้น ยังได้ฝึกทักษะทางคลินิกเบื้องต้นและทักษะการสื่อสารกับผู้ป่วยด้วย ซึ่งจะทำให้เพิ่มความมั่นใจตอนศึกษาในชั้นคลินิก”",
+                quote: "“Study in a joint program. It is a great opportunity to study medicine in both Thai and foreign systems. Learn about how to make teaching and learning. Medical Innovation And health systems in both Thailand and abroad. Enough already graduated. In addition, the initial research work, part of the Bachelor of Medical Sciences, has enabled us to develop the skills needed to perform research. Pre-clinical classes at the University of Nottingham They also practice basic clinical skills and communication skills with patients. This will increase confidence in clinical studies.”",
                 by: "นาย สุภวิช  อยู่เป็นสุข",
                 position: "นักศึกษา",
                 profileImage: "58107010017.png"
@@ -402,7 +402,7 @@ var Swu;
         },
         event: {
             title: "กิจกรมภายใน",
-            description: "กำหนดการต่างๆ เกี่ยวกับการสอบและกิจกรรมที่เกี่ยวข้อง"
+            description: "กิจกรรมที่ทุกคนสามารถเข้าดูได้ คุณสามารถติดตามกิจกรรมของหลักสูตร เช่น ประกาศรับสมัคร ติดตามผลประกาศรับประกาศ และกิจกรรมใหม่ๆของหลักสูตร โดยนิสิตของเรา"
         },
         commitments: {
             title: "วัตถุประสงค์ของหลักสูตร"
@@ -415,22 +415,25 @@ var Swu;
         },
         testimonials: {
             title: "Our Happy Students",
-            description: "Our alumni are very content with our classes and 99% of them managed to find a job in their field. Check out our full testimonials from our best students worldwide.",
+            description: "นิสิตของเราบอกถึงความรู้สึกที่ดีกับชั้นเรียนของเราและ 99% ของพวกเขาสามารถหางานทำในสาขาของตนได้ ดูคำรับรองจากนักเรียนที่ดีที่สุดของเรา",
             checkfaq: "Check our FAQ’s",
             thumb1: {
-                quote: "“The lectures & tutorials are interesting academically stimulating, and applied to real-world case studies which is extremely useful.”",
-                by: "Jaqueline Smith",
-                position: "BA Hons Business Management"
+                quote: "“หลักสูตรนี้มีประโยชน์ในการเพิ่มความมั่นใจและความสามารถในการปฏิสัมพันธ์กับคนใข้”",
+                by: "นายภาคภูมิ  จันทราพิทักษ์",
+                position: "นักศึกษา",
+                profileImage: "59107010014.png"
             },
             thumb2: {
-                quote: "“The lectures & tutorials are interesting academically stimulating, and applied to real-world case studies which is extremely useful.”",
-                by: "Jaqueline Smith",
-                position: "BA Hons Business Management"
+                quote: "“รู้สึกอบอุ่น ทุกคนคอยดูแลกัน เป็นกันเอง เหมือนเป็นครอบครัวเดียวกันค่ะ”",
+                by: "นางสาวช่อณพัชร สุวรรณรักษ์",
+                position: "นักศึกษา",
+                profileImage: "60107010009.png"
             },
             thumb3: {
-                quote: "“The lectures & tutorials are interesting academically stimulating, and applied to real-world case studies which is extremely useful.”",
-                by: "Jaqueline Smith",
-                position: "BA Hons Business Management"
+                quote: "“การที่ได้เรียนในหลักสูตรโครงการร่วมฯ เป็นโอกาสที่ดีที่จะได้ศึกษาวิชาแพทยศาสตร์ทั้งในระบบไทยและระบบต่างประเทศ ทำให้ได้สัมผัสถึงวิธีการเรียนการสอน นวัตกรรมทางการแพทย์ และระบบสาธารณสุขของทั้งในประเทศไทยและในต่างประเทศ ซึ่งพอเรียนจบแล้ว สามารถนำข้อดีและข้อเสียของทั้งสองระบบมาปรับใช้ในอนาคตได้ นอกจากนี้ การได้ทำงานวิจัยเบื้องต้นซึ่งเป็นส่วนหนึ่งของปริญญา Bachelor of Medical Sciences ทำให้เราได้พัฒนาทักษะที่ต้องใช้ในการทำงานวิจัย การเรียนในชั้นพรีคลินิกที่มหาวิทยาลัยนอตติงแฮมนั้น ยังได้ฝึกทักษะทางคลินิกเบื้องต้นและทักษะการสื่อสารกับผู้ป่วยด้วย ซึ่งจะทำให้เพิ่มความมั่นใจตอนศึกษาในชั้นคลินิก”",
+                by: "นาย สุภวิช  อยู่เป็นสุข",
+                position: "นักศึกษา",
+                profileImage: "58107010017.png"
             }
         },
         committee: {
@@ -2327,7 +2330,7 @@ var Swu;
                                     <h4 class='irs-bp-title'>" + value.title + "</h3>\
                                         <div class='irs-bp-meta' >\
                                             <ul class='list-inline irs-bp-meta-dttime' >\
-                                                <li><span class='flaticon-clock-1' > </span>" + moment(value.startDate).format('DD/MM/YYYY h:mm:ss a') + "</li>\
+                                                <li><span class='flaticon-clock-1' > </span>" + moment(value.startDate).format('DD/MM/YYYY') + "</li>\
                                             </ul>\
                                         </div>\
                                 </div>\
@@ -3019,7 +3022,7 @@ var Swu;
                                 <a href='../../../../" + value.imageUrl + "' title= '" + value.name + "' by='" + value.uploadBy + "'>\
                                     <img class='img-responsive' alt= '' src= '../../../../" + value.imageUrl + "'></a>\
                             </div>\
-                        <div class='resources-description' ><p>" + value.displayPublishedDate + "</p>\
+                        <div class='resources-description' >\
                         <h4>" + value.name + "</h4></div></div>\
                     </div>";
                     html += elements;
