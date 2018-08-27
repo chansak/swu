@@ -39,7 +39,7 @@ module Swu {
             },
             {
                 name: "settings.courses",
-                roles: ["Admin", "Teacher","Officer"]
+                roles: ["Admin","Officer"]
             },
             {
                 name: "settings.users",
