@@ -280,12 +280,11 @@ namespace Swu.Portal.Web.Api
                 if (!string.IsNullOrWhiteSpace(course.CreatedBy)) {
                     var createdBy = course.CreatedBy.Split(' ');
                     var user = this._applicationUserServices.GetAllUsers()
-                        .Where(
-                                            i =>
-                                                (i.FirstName_EN.ToLower()
-                                                    .Contains(createdBy[0].ToLower()) || i.LastName_EN.ToLower()
-                                                    .Contains(createdBy[1].ToLower()))
-                                            ).FirstOrDefault();
+                        .Where(i => (i.FirstName_EN.ToLower().Contains(createdBy[0].ToLower()) && i.LastName_EN.ToLower().Contains(createdBy[1].ToLower()))).FirstOrDefault();
+                    if (user == null) {
+                        user = this._applicationUserServices.GetAllUsers()
+                        .Where(i =>(i.FirstName_TH.ToLower().Contains(createdBy[0].ToLower()) && i.LastName_TH.ToLower().Contains(createdBy[1].ToLower()))).FirstOrDefault();
+                    }
                     course.CreatedUserId = user.Id;
                 }
                 if (string.IsNullOrEmpty(course.Id))
