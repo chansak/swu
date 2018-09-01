@@ -2,7 +2,7 @@
     <div class="irs-cl-list" ng-repeat="s in students">
         <div class="col-xs-12 col-lg-2">
             <div class="irs-ctds-thumb">
-                <img class="img-responsive img-fluid" src="../../../../Content/images/alumni/default.jpg" alt="cl1.png">
+                <img class="img-responsive img-fluid" ng-src="../../../../Content/images/alumni/{{s.graduatedYear}}/{{s.studentId}}.jpg" on-error-src="../../../../Content/images/alumni/default.jpg">
                 <div class="irs-cl-overlay"></div>
             </div>
         </div>

@@ -48,7 +48,9 @@
             this.$scope.render = (albums: IPhotoAlbum[]) => {
                 var html = "";
                 if (this.auth.isLoggedIn()) {
-                    albums.splice(3, 1);
+                    if (this.auth.getCurrentUser().selectedRoleName == "Admin" || this.auth.getCurrentUser().selectedRoleName == "Officer") {
+                        albums.splice(3, 1);
+                    }
                 }
                 _.forEach(albums, (value, key) => {
                     var elements = '\
@@ -58,21 +60,25 @@
                                     <img class="img-responsive" alt= "" src= "../../../../'+ value.displayImage + '" >\
                                 </div>\
                                 <div class="resources-description" >\
-                                    <p>'+ moment(value.publishedDate).format('LLLL') + '</p>\
                                     <h5>'+ value.title + '</h5>\
                                 </div>\
-                            </div>\
-                            <div class="input-group" ng-show="isLoggedIn()">\
+                            </div>';
+                    if (this.auth.isLoggedIn()) {
+                        if (this.auth.getCurrentUser().selectedRoleName == "Admin" || this.auth.getCurrentUser().selectedRoleName == "Officer") {
+                            elements += '<div class="input-group" >\
                                     <input type= "text" id="'+ value.id + '" class="form-control" value= "' + config.web.protocal + "://" + config.web.ip + $state.href('photo', { "id": value.id, "title": value.title }) + '" placeholder= "Photo gallery url" id= "copy-input" >\
                                     <span class="input-group-btn" >\
                                         <button class="btn btn-default" type= "button" id= "copy-button" data- toggle="tooltip" data- placement="bottom" title= "" data- original - title="Copy to Clipboard" ng-click="copyUrlToClipboard(\''+ value.id + '\'\,\'' + value.title + '\')">Copy</button>\
                                     </span>\
-                            </div>\
-                        </div>';
+                            </div>';
+                        }
+                    }
+                    elements += '</div>';
                     html += elements;
                 });
                 if (this.auth.isLoggedIn()) {
-                    html += '\
+                    if (this.auth.getCurrentUser().selectedRoleName == "Admin" || this.auth.getCurrentUser().selectedRoleName == "Officer") {
+                        html += '\
                 <div class="col-md-3">\
                     <div class="resources-item" style= "margin-top:30px !important" ng-click="createNewAlbum()">\
                         <div class="resources-description" >\
@@ -81,6 +87,7 @@
                             <div class="irs-evnticon" > <span class="flaticon-cross" > </span></div></div>\
                         </div>\
                 </div>';
+                    }
                 }
                 this.$scope.html = html;
             }

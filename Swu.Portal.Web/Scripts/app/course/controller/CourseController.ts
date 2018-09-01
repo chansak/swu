@@ -65,9 +65,22 @@
                                 this.$scope.canTakeCourse = true;
                             }
                         } else {
-                            this.$scope.canTakeCourse = _.filter(this.$scope.courseDetail.students, (item: IStudentDetail, index: number) => {
-                                return item.id.toString() == this.$scope.getCurrentUser().id && this.$scope.getCurrentUser().selectedRoleName == "Student";
-                            }).length == 0;
+                            //this.$scope.canTakeCourse = _.filter(this.$scope.courseDetail.students, (item: IStudentDetail, index: number) => {
+                            //    var result = item.id.toString() == this.$scope.getCurrentUser().id && this.$scope.getCurrentUser().selectedRoleName == "Student";
+                            //    return result;
+                            //}).length == 0;
+                            if (this.$scope.getCurrentUser().selectedRoleName != "Student") {
+                                this.$scope.canTakeCourse = false;
+                            } else {
+                                for (var i = 0; i < this.$scope.courseDetail.students.length; i++) {
+                                    this.$scope.canTakeCourse = true;
+                                    var isExitLoop = this.$scope.courseDetail.students[i].id.toString() == this.$scope.getCurrentUser().id;
+                                    if (isExitLoop) {
+                                        this.$scope.canTakeCourse = false;
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
                     this.$scope.courseDetail.course.fullDescription = $sce.trustAsHtml(this.$scope.courseDetail.course.fullDescription);

@@ -414,7 +414,7 @@ var Swu;
             title: "ข่าวสาร"
         },
         testimonials: {
-            title: "Our Happy Students",
+            title: "คำประทับใจ",
             description: "นิสิตของเราบอกถึงความรู้สึกที่ดีกับชั้นเรียนของเราและ 99% ของพวกเขาสามารถหางานทำในสาขาของตนได้ ดูคำรับรองจากนักเรียนที่ดีที่สุดของเรา",
             checkfaq: "Check our FAQ’s",
             thumb1: {
@@ -753,6 +753,17 @@ var Swu;
                 $timeout(function () {
                     _element[0].focus();
                 }, 0);
+            }
+        };
+    })
+        .directive('onErrorSrc', function () {
+        return {
+            link: function (scope, element, attrs) {
+                element.bind('error', function () {
+                    if (attrs.src != attrs.onErrorSrc) {
+                        attrs.$set('src', attrs.onErrorSrc);
+                    }
+                });
             }
         };
     })
@@ -2606,7 +2617,9 @@ var Swu;
             this.$scope.render = function (albums) {
                 var html = "";
                 if (_this.auth.isLoggedIn()) {
-                    albums.splice(3, 1);
+                    if (_this.auth.getCurrentUser().selectedRoleName == "Admin" || _this.auth.getCurrentUser().selectedRoleName == "Officer") {
+                        albums.splice(3, 1);
+                    }
                 }
                 _.forEach(albums, function (value, key) {
                     var elements = '\
@@ -2616,21 +2629,25 @@ var Swu;
                                     <img class="img-responsive" alt= "" src= "../../../../' + value.displayImage + '" >\
                                 </div>\
                                 <div class="resources-description" >\
-                                    <p>' + moment(value.publishedDate).format('LLLL') + '</p>\
                                     <h5>' + value.title + '</h5>\
                                 </div>\
-                            </div>\
-                            <div class="input-group" ng-show="isLoggedIn()">\
+                            </div>';
+                    if (_this.auth.isLoggedIn()) {
+                        if (_this.auth.getCurrentUser().selectedRoleName == "Admin" || _this.auth.getCurrentUser().selectedRoleName == "Officer") {
+                            elements += '<div class="input-group" >\
                                     <input type= "text" id="' + value.id + '" class="form-control" value= "' + config.web.protocal + "://" + config.web.ip + $state.href('photo', { "id": value.id, "title": value.title }) + '" placeholder= "Photo gallery url" id= "copy-input" >\
                                     <span class="input-group-btn" >\
                                         <button class="btn btn-default" type= "button" id= "copy-button" data- toggle="tooltip" data- placement="bottom" title= "" data- original - title="Copy to Clipboard" ng-click="copyUrlToClipboard(\'' + value.id + '\'\,\'' + value.title + '\')">Copy</button>\
                                     </span>\
-                            </div>\
-                        </div>';
+                            </div>';
+                        }
+                    }
+                    elements += '</div>';
                     html += elements;
                 });
                 if (_this.auth.isLoggedIn()) {
-                    html += '\
+                    if (_this.auth.getCurrentUser().selectedRoleName == "Admin" || _this.auth.getCurrentUser().selectedRoleName == "Officer") {
+                        html += '\
                 <div class="col-md-3">\
                     <div class="resources-item" style= "margin-top:30px !important" ng-click="createNewAlbum()">\
                         <div class="resources-description" >\
@@ -2639,6 +2656,7 @@ var Swu;
                             <div class="irs-evnticon" > <span class="flaticon-cross" > </span></div></div>\
                         </div>\
                 </div>';
+                    }
                 }
                 _this.$scope.html = html;
             };
@@ -2972,9 +2990,19 @@ var Swu;
                             }
                         }
                         else {
-                            _this.$scope.canTakeCourse = _.filter(_this.$scope.courseDetail.students, function (item, index) {
-                                return item.id.toString() == _this.$scope.getCurrentUser().id && _this.$scope.getCurrentUser().selectedRoleName == "Student";
-                            }).length == 0;
+                            if (_this.$scope.getCurrentUser().selectedRoleName != "Student") {
+                                _this.$scope.canTakeCourse = false;
+                            }
+                            else {
+                                for (var i = 0; i < _this.$scope.courseDetail.students.length; i++) {
+                                    _this.$scope.canTakeCourse = true;
+                                    var isExitLoop = _this.$scope.courseDetail.students[i].id.toString() == _this.$scope.getCurrentUser().id;
+                                    if (isExitLoop) {
+                                        _this.$scope.canTakeCourse = false;
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
                     _this.$scope.courseDetail.course.fullDescription = $sce.trustAsHtml(_this.$scope.courseDetail.course.fullDescription);

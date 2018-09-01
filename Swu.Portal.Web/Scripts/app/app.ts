@@ -374,6 +374,17 @@ module Swu {
                 }
             };
         })
+        .directive('onErrorSrc', function () {
+            return {
+                link: function (scope: any, element: any, attrs:any) {
+                    element.bind('error', function () {
+                        if (attrs.src != attrs.onErrorSrc) {
+                            attrs.$set('src', attrs.onErrorSrc);
+                        }
+                    });
+                }
+            }
+        })
         .run(["$state", "$http", "$rootScope", "AppConstant", "AuthServices", "$window", function ($state: ng.ui.IStateService, $http: ng.IHttpService, $rootScope: IRootScope, AppConstant: AppConstant, auth: IAuthServices, $window: ng.IWindowService) {
             $rootScope.$on('$stateChangeStart', function (evt, to, params) {
                 console.log('next state:' + to.name);
