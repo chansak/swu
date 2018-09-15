@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Swu.Portal.Web/v15/Server/sqlite3
+/packages
+/Swu.Portal.Core/bin

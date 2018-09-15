@@ -90,7 +90,9 @@ D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\System.Web.WebPages.dll
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\System.Web.WebPages.Razor.dll
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Swu.Portal.Core.pdb
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Swu.Portal.Data.pdb
+D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Swu.Portal.Data.dll.config
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Swu.Portal.Service.pdb
+D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Swu.Portal.Service.dll.config
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Autofac.xml
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Autofac.Integration.Mvc.xml
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\Autofac.Integration.Owin.xml
@@ -117,6 +119,8 @@ D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\System.Web.Razor.xml
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\System.Web.WebPages.xml
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Git\swu\Swu.Portal.Web.Api\bin\Debug\System.Web.WebPages.Razor.xml
-D:\Git\swu\Swu.Portal.Web.Api\obj\Debug\Swu.Portal.Web.Api.csprojResolveAssemblyReference.cache
+D:\Git\swu\Swu.Portal.Web.Api\obj\Debug\Swu.Portal.Web.Api.csprojAssemblyReference.cache
+D:\Git\swu\Swu.Portal.Web.Api\obj\Debug\Swu.Portal.Web.Api.csproj.CoreCompileInputs.cache
+D:\Git\swu\Swu.Portal.Web.Api\obj\Debug\Swu.Portal.Web.Api.csproj.CopyComplete
 D:\Git\swu\Swu.Portal.Web.Api\obj\Debug\Swu.Portal.Web.Api.dll
 D:\Git\swu\Swu.Portal.Web.Api\obj\Debug\Swu.Portal.Web.Api.pdb

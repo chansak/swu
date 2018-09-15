@@ -533,6 +533,7 @@
     <Content Include="Scripts\utilities\moment.min.js" />
     <Content Include="Scripts\bootstrap\respond.js" />
     <Content Include="Scripts\bootstrap\respond.min.js" />
+    <None Include="Scripts\_references.js" />
     <Content Include="tsconfig.json" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

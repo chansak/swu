@@ -29,6 +29,8 @@ D:\Git\swu\Swu.Portal.Data\bin\Debug\EntityFramework.xml
 D:\Git\swu\Swu.Portal.Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\Git\swu\Swu.Portal.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\Git\swu\Swu.Portal.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csprojResolveAssemblyReference.cache
+D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csprojAssemblyReference.cache
+D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csproj.CoreCompileInputs.cache
+D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csproj.CopyComplete
 D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.dll
 D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.pdb

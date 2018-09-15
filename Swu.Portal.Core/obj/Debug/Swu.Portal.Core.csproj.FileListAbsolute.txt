@@ -4,5 +4,7 @@ D:\Git\swu-portal\Swu.Portal.Web\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.dll
 D:\Git\swu-portal\Swu.Portal.Web\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.pdb
 D:\Git\swu\Swu.Portal.Core\bin\Debug\Swu.Portal.Core.dll
 D:\Git\swu\Swu.Portal.Core\bin\Debug\Swu.Portal.Core.pdb
+D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.csprojAssemblyReference.cache
+D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.csproj.CoreCompileInputs.cache
 D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.dll
 D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.pdb

@@ -231,8 +231,10 @@ var Swu;
         shared: {
             applicationName: "SWU-Joint Medical",
             name: "Srinakharinwirot University",
-            address: "4th Floor, Faculty of Medicine Srinakharinwirot UniversitSukhumvit 23, Bangkok 10110 THAILAND",
-            phone: "+66 2 649 5934 or +66 2 260 2233-4 ext. 4919, 4409"
+            address: "4th Floor, Faculty of Medicine Srinakharinwirot University Sukhumvit 23, Bangkok 10110 THAILAND",
+            phone: "+66 2 649 5934 or +66 2 260 2233-4 ext. 4919, 4409",
+            mobile: "092-379-2203",
+            email: "jointmdswu@gmail.com"
         },
         login: {
             anyQuestions: "",
@@ -306,20 +308,20 @@ var Swu;
             checkfaq: "Check our FAQ’s",
             thumb1: {
                 quote: "“This course is useful for increasing the confidence and ability to interact with people.”",
-                by: "นายภาคภูมิ  จันทราพิทักษ์",
-                position: "นักศึกษา",
+                by: "Mr.Pakpoom Chantrapitak ",
+                position: "Student",
                 profileImage: "59107010014.png"
             },
             thumb2: {
                 quote: "“I feel as warm as everyone is as friendly as a family.”",
-                by: "นางสาวช่อณพัชร สุวรรณรักษ์",
-                position: "นักศึกษา",
+                by: " MissChornapatch Suwannaraks",
+                position: "Student",
                 profileImage: "60107010009.png"
             },
             thumb3: {
                 quote: "“Study in a joint program. It is a great opportunity to study medicine in both Thai and foreign systems. Learn about how to make teaching and learning. Medical Innovation And health systems in both Thailand and abroad. Enough already graduated. In addition, the initial research work, part of the Bachelor of Medical Sciences, has enabled us to develop the skills needed to perform research. Pre-clinical classes at the University of Nottingham They also practice basic clinical skills and communication skills with patients. This will increase confidence in clinical studies.”",
-                by: "นาย สุภวิช  อยู่เป็นสุข",
-                position: "นักศึกษา",
+                by: "Mr. Supawish Yoopensuk",
+                position: "Student",
                 profileImage: "58107010017.png"
             }
         },
@@ -345,7 +347,9 @@ var Swu;
             applicationName: "โครงการพัฒนาระบบประชาสัมพันธ์หลักสูตรแพทยศาสตรบัณฑิตโครงการร่วมนอตติงแฮม",
             name: "มหาวิทยาลัยศรีนครินทร์วิโรฒ",
             address: "ชั้น 4 อาคาร 15 คณะแพทยศาสตร์ มหาวิทยาลัยศรีนครินทรวิโรฒ สุขุมวิท 23 เขตวัฒนา กรุงเทพฯ 10110",
-            phone: "02 649 5934 02 260 2122-4 ต่อ 4919, 4409"
+            phone: "02 649 5934 02 260 2122-4 ต่อ 4919, 4409",
+            mobile: "092-379-2203",
+            email: "jointmdswu@gmail.com"
         },
         login: {
             anyQuestions: "",
