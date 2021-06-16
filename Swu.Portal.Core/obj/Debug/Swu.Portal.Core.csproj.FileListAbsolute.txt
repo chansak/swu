@@ -8,3 +8,7 @@ D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.csprojAssemblyReference.cac
 D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.csproj.CoreCompileInputs.cache
 D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.dll
 D:\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Core\bin\Debug\Swu.Portal.Core.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Core\bin\Debug\Swu.Portal.Core.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Core\obj\Debug\Swu.Portal.Core.pdb

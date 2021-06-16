@@ -710,7 +710,7 @@ var Swu;
         </div>'
         };
     })
-        .config(["$translateProvider", "AppConstant", "$mdDateLocaleProvider", function ($translateProvider, AppConstant, $mdDateLocaleProvider) {
+        .config(["$translateProvider", "AppConstant", "$mdDateLocaleProvider", "$locationProvider", function ($translateProvider, AppConstant, $mdDateLocaleProvider, $locationProvider) {
             $translateProvider.translations("en", Swu.translations_en);
             $translateProvider.translations("th", Swu.translations_th);
             $translateProvider.preferredLanguage(AppConstant.defaultLang);
@@ -718,6 +718,11 @@ var Swu;
             $mdDateLocaleProvider.formatDate = function (date) {
                 return moment(date).format('DD/MM/YYYY');
             };
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+            $locationProvider.hashPrefix('!');
         }])
         .filter('highlight', ['$sce', function ($sce) {
             return function (input, searchParam) {
@@ -1221,8 +1226,8 @@ var Swu;
             this.$locationProvider = $locationProvider;
             this.$httpProvider = $httpProvider;
             $stateProvider
-                .state("app", {
-                url: "/app",
+                .state("/", {
+                url: "/",
                 templateUrl: "/Scripts/app/home/index.html",
                 cache: false,
                 controller: "HomeController as vm"

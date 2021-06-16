@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swu.Portal.Web", "Swu.Portal.Web\Swu.Portal.Web.csproj", "{0E1D8BA5-A458-4168-B0B0-9374195ED342}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swu.Portal.Service", "Swu.Portal.Service\Swu.Portal.Service.csproj", "{F04FB474-779E-478C-BBDE-1803AF2B6937}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swu.Portal.Web.Api", "Swu.Portal.Web.Api\Swu.Portal.Web.Api.csproj", "{B811FC40-B56D-4CE5-8698-B9E64E1FD7EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swu.Portal.Web.Apiv2", "Swu.Portal.Web.Apiv2\Swu.Portal.Web.Apiv2.csproj", "{78CA7924-9BBE-4CDA-9BAB-40FF5D3BB0DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,8 +41,15 @@ Global
 		{B811FC40-B56D-4CE5-8698-B9E64E1FD7EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B811FC40-B56D-4CE5-8698-B9E64E1FD7EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B811FC40-B56D-4CE5-8698-B9E64E1FD7EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CA7924-9BBE-4CDA-9BAB-40FF5D3BB0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CA7924-9BBE-4CDA-9BAB-40FF5D3BB0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CA7924-9BBE-4CDA-9BAB-40FF5D3BB0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CA7924-9BBE-4CDA-9BAB-40FF5D3BB0DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C016266A-7CFF-4317-ACDF-C8AE1D53E3B1}
 	EndGlobalSection
 EndGlobal

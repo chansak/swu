@@ -34,3 +34,20 @@ D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csproj.CoreCompileInputs.ca
 D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csproj.CopyComplete
 D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.dll
 D:\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Swu.Portal.Data.dll.config
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Swu.Portal.Data.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Swu.Portal.Data.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\EntityFramework.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Swu.Portal.Core.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Swu.Portal.Core.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\EntityFramework.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csprojAssemblyReference.cache
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.csproj.CopyComplete
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Data\obj\Debug\Swu.Portal.Data.pdb

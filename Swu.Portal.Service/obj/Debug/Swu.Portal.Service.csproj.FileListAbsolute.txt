@@ -41,3 +41,28 @@ D:\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.csproj.CoreCompileInp
 D:\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.csproj.CopyComplete
 D:\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.dll
 D:\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Service.dll.config
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Service.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Service.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Autofac.Configuration.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Autofac.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\EntityFramework.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\SharpRepository.Ioc.Autofac.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\SharpRepository.Repository.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Core.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Data.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Core.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Data.pdb
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Swu.Portal.Data.dll.config
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Autofac.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\EntityFramework.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.csprojAssemblyReference.cache
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.csproj.CopyComplete
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.dll
+C:\MY WORK\WorkSpace\Git\swu\Swu.Portal.Service\obj\Debug\Swu.Portal.Service.pdb

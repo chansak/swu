@@ -10,8 +10,8 @@
             private $httpProvider: ng.IHttpProvider) {
             //$urlRouterProvider.otherwise("/app");
             $stateProvider
-                .state("app", {
-                    url: "/app",
+                .state("/", {
+                    url: "/",
                     templateUrl: "/Scripts/app/home/index.html",
                     cache:false,
                     controller: "HomeController as vm"

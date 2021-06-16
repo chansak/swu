@@ -323,7 +323,7 @@ module Swu {
         </div>'
             };
         })
-        .config(["$translateProvider", "AppConstant", "$mdDateLocaleProvider", function ($translateProvider: any, AppConstant: AppConstant, $mdDateLocaleProvider: any) {
+        .config(["$translateProvider", "AppConstant", "$mdDateLocaleProvider","$locationProvider", function ($translateProvider: any, AppConstant: AppConstant, $mdDateLocaleProvider: any, $locationProvider:ng.ILocationProvider) {
             $translateProvider.translations("en", translations_en);
             $translateProvider.translations("th", translations_th);
             $translateProvider.preferredLanguage(AppConstant.defaultLang);
@@ -331,6 +331,11 @@ module Swu {
             $mdDateLocaleProvider.formatDate = function (date: any) {
                 return moment(date).format('DD/MM/YYYY');
             };
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+            $locationProvider.hashPrefix('!');
         }])
         .filter('highlight', ['$sce', function ($sce: ng.ISCEService) {
             return function (input: any, searchParam: any) {

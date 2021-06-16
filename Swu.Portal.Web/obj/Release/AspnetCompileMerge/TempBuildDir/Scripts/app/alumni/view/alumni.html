@@ -1,0 +1,18 @@
+﻿<div class="row clearfix">
+    <div class="irs-cl-list" ng-repeat="s in students">
+        <div class="col-xs-12 col-lg-2">
+            <div class="irs-ctds-thumb">
+                <img class="img-responsive img-fluid" ng-src="../../../../Content/images/alumni/{{s.graduatedYear}}/{{s.studentId}}.jpg" on-error-src="../../../../Content/images/alumni/default.jpg">
+                <div class="irs-cl-overlay"></div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-lg-10">
+            <div class="irs-cl-details">
+                <div class="irs-courses-td-sngle-dtls">
+                    <h2>ID:{{s.studentId }}</h2>
+                    <h4>{{s.fullName}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
