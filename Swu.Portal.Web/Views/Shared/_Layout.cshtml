@@ -1,15 +1,15 @@
 ﻿<!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="en" ng-app="app" ng-controller="RootController">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="Keywords" lang="en" content="Srinakharinwirot, SWU, Thai University, Public University, Government sponsored University, Comprehensive University, Higher Education, bachelor's, master's, doctoral, Ph.D., Admission, Bangkok, Ongkharak, Nakhon Nayok Province, Thailand">
-    <meta name="Keywords" lang="th" content="มหาวิทยาลัย , มหาวิทยาลัยศรีนครินทรวิโรฒ , มศว,ศรีนครินทรวิโรฒ, มศว., วิจัย,  ปริญญาตรี, ปริญญาโท,ปริญญาเอก,รับนิสิตใหม่,องครักษ์,นครนายก,สาธิต">
-    <meta name="Description" content="Srinakharinwirot University is a government sponsored university located in Bangkok, Thailand.  It was established in 1949 as the Higher Teacher Training School at Prasarnmit and became the College of Education in 1953.  In 1974, the College of Education became a comprehensive university by a Royal Decree of His Majesty King Bhumibol Adulyadej, who graciously granted the new university the name of Srinakharinwirot (See-na-ka-rin-wee-rote), which means ‘the glory of the city.’  Currently, the University has 14 faculties and 12 research institutes and centers located in Prasarnmit Campus in central Bangkok and Ongkharak Campus in Nakhon Nayok Province.">
+    <meta name="Keywords" lang="en" content="{{$parent.seo.keywordEn}}">
+    <meta name="Keywords" lang="th" content="{{$parent.seo.keywordTh}}">
+    <meta name="Description" content="{{$parent.seo.description}}">
     @*<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>*@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <title>The Joint Medical Programme - Srinakharinwirot University - The University of Nottingham</title>
+    <title>{{$parent.seo.title}}</title>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

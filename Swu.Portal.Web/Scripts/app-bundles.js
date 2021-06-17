@@ -1684,6 +1684,26 @@ var Swu;
 })(Swu || (Swu = {}));
 var Swu;
 (function (Swu) {
+    var RootController = (function () {
+        function RootController($scope, $rootScope) {
+            this.$scope = $scope;
+            this.$rootScope = $rootScope;
+            this.init();
+        }
+        RootController.prototype.init = function () {
+        };
+        ;
+        RootController.$inject = ["$scope", "$rootScope"];
+        RootController = __decorate([
+            Swu.Module("app"),
+            Swu.Controller({ name: "RootController" })
+        ], RootController);
+        return RootController;
+    }());
+    Swu.RootController = RootController;
+})(Swu || (Swu = {}));
+var Swu;
+(function (Swu) {
     var NavController = (function () {
         function NavController($scope, $state, auth) {
             this.$scope = $scope;
@@ -1714,16 +1734,23 @@ var Swu;
 var Swu;
 (function (Swu) {
     var HomeController = (function () {
-        function HomeController($scope, $state, auth) {
+        function HomeController($scope, $rootScope, $state, auth) {
             this.$scope = $scope;
+            this.$rootScope = $rootScope;
             this.$state = $state;
             this.auth = auth;
             this.init();
         }
         HomeController.prototype.init = function () {
+            this.$rootScope.seo = {
+                title: "The Joint Medical Programme - Srinakharinwirot University - The University of Nottingham",
+                keywordEn: "Srinakharinwirot, SWU, Thai University, Public University, Government sponsored University, Comprehensive University, Higher Education, bachelor's, master's, doctoral, Ph.D., Admission, Bangkok, Ongkharak, Nakhon Nayok Province, Thailand",
+                keywordTh: "มหาวิทยาลัย , มหาวิทยาลัยศรีนครินทรวิโรฒ , มศว,ศรีนครินทรวิโรฒ, มศว., วิจัย,  ปริญญาตรี, ปริญญาโท,ปริญญาเอก,รับนิสิตใหม่,องครักษ์,นครนายก,สาธิต",
+                description: "Srinakharinwirot University is a government sponsored university located in Bangkok, Thailand.  It was established in 1949 as the Higher Teacher Training School at Prasarnmit and became the College of Education in 1953.  In 1974, the College of Education became a comprehensive university by a Royal Decree of His Majesty King Bhumibol Adulyadej, who graciously granted the new university the name of Srinakharinwirot (See-na-ka-rin-wee-rote), which means ‘the glory of the city.’  Currently, the University has 14 faculties and 12 research institutes and centers located in Prasarnmit Campus in central Bangkok and Ongkharak Campus in Nakhon Nayok Province."
+            };
         };
         ;
-        HomeController.$inject = ["$scope", "$state", "AuthServices"];
+        HomeController.$inject = ["$scope", "$rootScope", "$state", "AuthServices"];
         HomeController = __decorate([
             Swu.Module("app"),
             Swu.Controller({ name: "HomeController" })

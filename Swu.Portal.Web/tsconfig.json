@@ -33,6 +33,7 @@
     "Scripts/app/photo/app_routing.ts",
     "Scripts/app/qualification/app_routing.ts",
 
+    "Scripts/app/home/controller/RootController.ts",
     "Scripts/app/menu/controller/NavController.ts",
     "Scripts/app/home/controller/HomeController.ts",
     "Scripts/app/home/controller/HomeCourseController.ts",

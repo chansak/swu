@@ -7,9 +7,16 @@ module Swu {
     underscore.factory('_', ['$window', function ($window: any) {
         return $window._;
     }]);
+    export interface seo {
+        keywordEn: string;
+        keywordTh: string;
+        title: string;
+        description: string;
+    }
     export interface IRootScope extends ng.IRootScopeService {
         lang: string;
         scrollToToped(): void;
+        seo: seo;
     }
     angular
         .module("app", [
